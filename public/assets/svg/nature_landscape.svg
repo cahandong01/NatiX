@@ -1,0 +1,199 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4edf4;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#e8f4f8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5f9fa;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="sunGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fffef5;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#fff9e6;stop-opacity:0" />
+    </linearGradient>
+    
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4edf4;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#c8e6f0;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#d4edf4;stop-opacity:0" />
+    </linearGradient>
+    
+    <linearGradient id="hillLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f9fa;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#e8f4f8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hillMedium" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#d4edf4;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hillDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4edf4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0e4ed;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="treeDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b8d9e8;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#a8d0e0;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="treeLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8e6f0;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#b8d9e8;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="groundFar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#f5efde;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <linearGradient id="groundNear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4edf4;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#c8e6f0;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <filter id="softBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+    
+    <filter id="mediumBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+    </filter>
+  </defs>
+  
+  <!-- Sky Background -->
+  <rect width="800" height="800" fill="url(#skyGradient)"/>
+  
+  <!-- Sun glow - top left -->
+  <circle cx="150" cy="120" r="180" fill="url(#sunGlow)" opacity="0.6"/>
+  
+  <!-- Distant clouds - very soft -->
+  <g opacity="0.4" filter="url(#mediumBlur)">
+    <ellipse cx="200" cy="150" rx="120" ry="35" fill="url(#cloudGrad)"/>
+    <ellipse cx="280" cy="170" rx="100" ry="30" fill="url(#cloudGrad)"/>
+    
+    <ellipse cx="550" cy="100" rx="140" ry="40" fill="url(#cloudGrad)"/>
+    <ellipse cx="640" cy="120" rx="110" ry="32" fill="url(#cloudGrad)"/>
+  </g>
+  
+  <!-- Far distant hills - lightest -->
+  <g opacity="0.3" filter="url(#mediumBlur)">
+    <path d="M 0 350 Q 200 300 400 320 T 800 340 L 800 800 L 0 800 Z" fill="url(#hillLight)"/>
+  </g>
+  
+  <!-- Mid-distance hills -->
+  <g opacity="0.5" filter="url(#softBlur)">
+    <path d="M 0 420 Q 250 370 500 400 T 800 430 L 800 800 L 0 800 Z" fill="url(#hillMedium)"/>
+  </g>
+  
+  <!-- Closer hills with more detail -->
+  <g opacity="0.7">
+    <path d="M 0 480 Q 200 440 400 460 Q 600 480 800 500 L 800 800 L 0 800 Z" fill="url(#hillDark)"/>
+  </g>
+  
+  <!-- Background trees - distant left -->
+  <g opacity="0.4" filter="url(#softBlur)">
+    <ellipse cx="100" cy="480" rx="30" ry="50" fill="url(#treeLight)"/>
+    <ellipse cx="140" cy="490" rx="35" ry="55" fill="url(#treeLight)"/>
+    <ellipse cx="80" cy="495" rx="25" ry="45" fill="url(#treeLight)"/>
+    <rect x="95" y="510" width="10" height="40" fill="#b8d9e8" opacity="0.5"/>
+    <rect x="135" y="520" width="10" height="35" fill="#b8d9e8" opacity="0.5"/>
+  </g>
+  
+  <!-- Mid-ground layer -->
+  <path d="M 0 550 Q 300 520 600 545 T 800 570 L 800 800 L 0 800 Z" fill="url(#groundFar)"/>
+  
+  <!-- Main foreground trees - left side -->
+  <g opacity="0.7">
+    <!-- Tree 1 - furthest back -->
+    <g transform="translate(120, 450)">
+      <rect x="-6" y="30" width="12" height="80" rx="6" fill="url(#treeDark)"/>
+      <ellipse cx="0" cy="20" rx="35" ry="55" fill="url(#treeDark)"/>
+      <ellipse cx="-15" cy="30" rx="30" ry="48" fill="url(#treeDark)" opacity="0.8"/>
+      <ellipse cx="15" cy="32" rx="28" ry="45" fill="url(#treeDark)" opacity="0.8"/>
+    </g>
+    
+    <!-- Tree 2 - closer -->
+    <g transform="translate(180, 480)">
+      <rect x="-7" y="25" width="14" height="90" rx="7" fill="url(#treeDark)"/>
+      <ellipse cx="0" cy="15" rx="40" ry="62" fill="url(#treeDark)"/>
+      <ellipse cx="-18" cy="25" rx="35" ry="54" fill="url(#treeDark)" opacity="0.8"/>
+      <ellipse cx="18" cy="28" rx="32" ry="50" fill="url(#treeDark)" opacity="0.8"/>
+      <ellipse cx="0" cy="35" rx="28" ry="45" fill="url(#treeDark)" opacity="0.6"/>
+    </g>
+  </g>
+  
+  <!-- Foreground ground layer -->
+  <path d="M 0 620 Q 200 590 400 610 Q 600 625 800 640 L 800 800 L 0 800 Z" fill="url(#groundNear)"/>
+  
+  <!-- Main feature tree - large left foreground -->
+  <g opacity="0.8">
+    <g transform="translate(140, 520)">
+      <!-- Trunk -->
+      <rect x="-8" y="20" width="16" height="120" rx="8" fill="url(#treeDark)"/>
+      <rect x="-6" y="20" width="12" height="120" rx="6" fill="#a8d0e0" opacity="0.3"/>
+      
+      <!-- Foliage - layered -->
+      <ellipse cx="0" cy="10" rx="50" ry="75" fill="url(#treeDark)"/>
+      <ellipse cx="-22" cy="20" rx="45" ry="68" fill="url(#treeDark)" opacity="0.85"/>
+      <ellipse cx="22" cy="22" rx="42" ry="65" fill="url(#treeDark)" opacity="0.85"/>
+      <ellipse cx="0" cy="32" rx="38" ry="60" fill="url(#treeDark)" opacity="0.7"/>
+      <ellipse cx="-12" cy="42" rx="35" ry="55" fill="url(#treeDark)" opacity="0.6"/>
+      <ellipse cx="12" cy="45" rx="32" ry="52" fill="url(#treeDark)" opacity="0.6"/>
+      
+      <!-- Highlights -->
+      <ellipse cx="-15" cy="15" rx="20" ry="30" fill="#c8e6f0" opacity="0.3"/>
+      <ellipse cx="10" cy="20" rx="18" ry="28" fill="#c8e6f0" opacity="0.25"/>
+    </g>
+  </g>
+  
+  <!-- Small building/structure silhouette - far left -->
+  <g opacity="0.5">
+    <rect x="50" y="530" width="35" height="50" rx="2" fill="url(#treeLight)"/>
+    <rect x="52" y="532" width="31" height="46" rx="1" fill="#e8f4f8" opacity="0.3"/>
+    <rect x="58" y="540" width="8" height="12" rx="1" fill="#d4edf4" opacity="0.5"/>
+    <rect x="70" y="540" width="8" height="12" rx="1" fill="#d4edf4" opacity="0.5"/>
+    <rect x="58" y="558" width="8" height="12" rx="1" fill="#d4edf4" opacity="0.5"/>
+    <rect x="70" y="558" width="8" height="12" rx="1" fill="#d4edf4" opacity="0.5"/>
+  </g>
+  
+  <!-- Right side landscape elements -->
+  <g opacity="0.6">
+    <!-- Small trees/bushes right side -->
+    <ellipse cx="650" cy="570" rx="35" ry="45" fill="url(#treeLight)"/>
+    <ellipse cx="690" cy="580" rx="40" ry="50" fill="url(#treeLight)"/>
+    <ellipse cx="730" cy="585" rx="32" ry="42" fill="url(#treeLight)"/>
+    
+    <!-- Tree trunks -->
+    <rect x="645" y="595" width="10" height="35" fill="#b8d9e8" opacity="0.5"/>
+    <rect x="685" y="605" width="10" height="30" fill="#b8d9e8" opacity="0.5"/>
+  </g>
+  
+  <!-- Very foreground ground with texture -->
+  <g opacity="0.6">
+    <ellipse cx="400" cy="730" rx="350" ry="40" fill="#c0e4ed" opacity="0.5"/>
+    <path d="M 0 700 Q 200 680 400 695 Q 600 705 800 720 L 800 800 L 0 800 Z" fill="#d4edf4" opacity="0.4"/>
+  </g>
+  
+  <!-- Subtle grass/vegetation texture on ground -->
+  <g opacity="0.3">
+    <ellipse cx="100" cy="680" rx="45" ry="20" fill="#c8e6f0"/>
+    <ellipse cx="250" cy="690" rx="50" ry="22" fill="#c8e6f0"/>
+    <ellipse cx="420" cy="695" rx="55" ry="24" fill="#c8e6f0"/>
+    <ellipse cx="600" cy="705" rx="48" ry="21" fill="#c8e6f0"/>
+    <ellipse cx="730" cy="715" rx="42" ry="19" fill="#c8e6f0"/>
+  </g>
+  
+  <!-- Distant birds -->
+  <g opacity="0.25">
+    <path d="M 450 200 Q 455 198 460 200" stroke="#b8d9e8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 520 180 Q 525 178 530 180" stroke="#b8d9e8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 490 220 Q 495 218 500 220" stroke="#b8d9e8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Additional atmospheric clouds - closer -->
+  <g opacity="0.25">
+    <ellipse cx="600" cy="250" rx="100" ry="30" fill="url(#cloudGrad)"/>
+    <ellipse cx="680" cy="270" rx="85" ry="26" fill="url(#cloudGrad)"/>
+  </g>
+</svg>

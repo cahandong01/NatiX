@@ -1,0 +1,56 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6eb8d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a9fb8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffa94d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c1a;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="softShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.25"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <g filter="url(#softShadow)">
+    <!-- Computer/Monitor base -->
+    <rect x="50" y="130" width="90" height="6" rx="3" fill="#4a9fb8"/>
+    <rect x="85" y="136" width="20" height="8" fill="#4a9fb8"/>
+    <rect x="70" y="144" width="50" height="4" rx="2" fill="#4a9fb8"/>
+    
+    <!-- Monitor screen -->
+    <rect x="45" y="75" width="100" height="65" rx="4" fill="url(#blueGrad3)"/>
+    <rect x="50" y="80" width="90" height="55" rx="2" fill="#e8f4f8"/>
+    
+    <!-- Dashboard content - text lines -->
+    <rect x="58" y="88" width="74" height="4" rx="2" fill="#b8d9e8"/>
+    <rect x="58" y="97" width="35" height="3" rx="1.5" fill="#d4e9f2"/>
+    <rect x="58" y="105" width="40" height="3" rx="1.5" fill="#d4e9f2"/>
+    <rect x="58" y="113" width="30" height="3" rx="1.5" fill="#d4e9f2"/>
+    
+    <!-- Student icon representation -->
+    <circle cx="120" cy="105" r="8" fill="#6eb8d4"/>
+    <path d="M 110 118 Q 115 113 120 113 Q 125 113 130 118" fill="#6eb8d4"/>
+    
+    <!-- Warning/Alert triangle -->
+    <g transform="translate(130, 90)">
+      <path d="M 0 -18 L -16 10 L 16 10 Z" fill="url(#orangeGrad2)"/>
+      <path d="M 0 -12 L -13 8 L 13 8 Z" fill="#ffffff" opacity="0.2"/>
+      
+      <!-- Exclamation mark -->
+      <rect x="-1.5" y="-6" width="3" height="10" rx="1.5" fill="#ffffff"/>
+      <circle cx="0" cy="6" r="2" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

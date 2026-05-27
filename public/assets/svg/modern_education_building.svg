@@ -1,0 +1,220 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f8fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8f4f8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="buildingLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3f2fb;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#d1e9f7;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <linearGradient id="buildingMedium" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8e4f4;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#b3daf0;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="domeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7dc4f0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5eb3e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a9dd4;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="domeHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a8d8f5;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#8eccf2;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#7dc4f0;stop-opacity:0.2" />
+    </linearGradient>
+    
+    <linearGradient id="glassWindow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b3daf0;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#8eccf2;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#d4e9f2;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="treeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8d8f5;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#8eccf2;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <filter id="softShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="lightBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#skyGrad)"/>
+  
+  <!-- Ground -->
+  <ellipse cx="400" cy="550" rx="380" ry="40" fill="url(#groundGrad)" opacity="0.6"/>
+  <rect y="540" width="800" height="60" fill="#e8f4f8" opacity="0.4"/>
+  
+  <!-- Background trees - left -->
+  <g opacity="0.4" filter="url(#lightBlur)">
+    <ellipse cx="100" cy="480" rx="35" ry="60" fill="url(#treeGrad)"/>
+    <ellipse cx="140" cy="470" rx="40" ry="65" fill="url(#treeGrad)"/>
+    <ellipse cx="110" cy="490" rx="30" ry="50" fill="#c8e4f4" opacity="0.6"/>
+  </g>
+  
+  <!-- Left building - tall simple structure -->
+  <g filter="url(#softShadow)">
+    <rect x="140" y="250" width="100" height="290" rx="4" fill="url(#buildingLight)"/>
+    <rect x="145" y="250" width="90" height="290" rx="3" fill="#ffffff" opacity="0.3"/>
+    
+    <!-- Window sections -->
+    <rect x="160" y="275" width="70" height="80" rx="2" fill="url(#glassWindow)"/>
+    <line x1="195" y1="275" x2="195" y2="355" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+    <line x1="160" y1="315" x2="230" y2="315" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+    
+    <rect x="160" y="370" width="70" height="80" rx="2" fill="url(#glassWindow)"/>
+    <line x1="195" y1="370" x2="195" y2="450" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+    <line x1="160" y1="410" x2="230" y2="410" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+    
+    <!-- Balcony detail -->
+    <rect x="150" y="355" width="80" height="6" fill="#d1e9f7"/>
+  </g>
+  
+  <!-- Main building - center with dome -->
+  <g filter="url(#softShadow)">
+    <!-- Left wing -->
+    <rect x="260" y="340" width="120" height="200" rx="4" fill="url(#buildingMedium)"/>
+    <rect x="265" y="340" width="110" height="200" rx="3" fill="#ffffff" opacity="0.25"/>
+    
+    <!-- Large glass windows - left wing -->
+    <rect x="275" y="360" width="45" height="70" rx="2" fill="url(#glassWindow)"/>
+    <line x1="297.5" y1="360" x2="297.5" y2="430" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="275" y1="395" x2="320" y2="395" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <rect x="330" y="360" width="45" height="70" rx="2" fill="url(#glassWindow)"/>
+    <line x1="352.5" y1="360" x2="352.5" y2="430" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="330" y1="395" x2="375" y2="395" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <rect x="275" y="445" width="100" height="85" rx="2" fill="url(#glassWindow)"/>
+    <line x1="325" y1="445" x2="325" y2="530" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="275" y1="487" x2="375" y2="487" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Horizontal accent band -->
+    <rect x="260" y="430" width="120" height="8" fill="#b3daf0"/>
+    
+    <!-- Center section with dome -->
+    <rect x="380" y="300" width="140" height="240" rx="4" fill="url(#buildingMedium)"/>
+    <rect x="385" y="300" width="130" height="240" rx="3" fill="#ffffff" opacity="0.25"/>
+    
+    <!-- Dome structure -->
+    <ellipse cx="450" cy="250" rx="70" ry="50" fill="url(#domeGrad)"/>
+    <!-- Dome highlight -->
+    <ellipse cx="450" cy="240" rx="60" ry="40" fill="url(#domeHighlight)"/>
+    <!-- Dome segments -->
+    <path d="M 380 250 Q 450 200 520 250" fill="none" stroke="#a8d8f5" stroke-width="2" opacity="0.4"/>
+    <path d="M 390 255 Q 450 210 510 255" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Dome base -->
+    <ellipse cx="450" cy="300" rx="70" ry="12" fill="#4a9dd4"/>
+    <ellipse cx="450" cy="300" rx="70" ry="12" fill="#ffffff" opacity="0.2"/>
+    
+    <!-- Center glass entrance -->
+    <rect x="405" y="440" width="90" height="100" rx="3" fill="url(#glassWindow)"/>
+    <line x1="450" y1="440" x2="450" y2="540" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+    <line x1="405" y1="490" x2="495" y2="490" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+    
+    <!-- Door -->
+    <rect x="430" y="495" width="40" height="45" rx="2" fill="#5eb3e8" opacity="0.6"/>
+    <rect x="432" y="497" width="36" height="41" rx="1.5" fill="#ffffff" opacity="0.3"/>
+    <circle cx="462" cy="517" r="2" fill="#7dc4f0"/>
+    
+    <!-- Upper windows -->
+    <rect x="395" y="320" width="50" height="60" rx="2" fill="url(#glassWindow)"/>
+    <line x1="420" y1="320" x2="420" y2="380" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="395" y1="350" x2="445" y2="350" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <rect x="455" y="320" width="50" height="60" rx="2" fill="url(#glassWindow)"/>
+    <line x1="480" y1="320" x2="480" y2="380" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="455" y1="350" x2="505" y2="350" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Balcony accent -->
+    <rect x="380" y="385" width="140" height="8" fill="#b3daf0"/>
+    
+    <!-- Right wing -->
+    <rect x="520" y="340" width="120" height="200" rx="4" fill="url(#buildingMedium)"/>
+    <rect x="525" y="340" width="110" height="200" rx="3" fill="#ffffff" opacity="0.25"/>
+    
+    <!-- Glass windows - right wing -->
+    <rect x="530" y="360" width="100" height="70" rx="2" fill="url(#glassWindow)"/>
+    <line x1="580" y1="360" x2="580" y2="430" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="530" y1="395" x2="630" y2="395" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <rect x="530" y="445" width="50" height="85" rx="2" fill="url(#glassWindow)"/>
+    <line x1="555" y1="445" x2="555" y2="530" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="530" y1="487" x2="580" y2="487" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <rect x="590" y="445" width="40" height="85" rx="2" fill="url(#glassWindow)"/>
+    <line x1="610" y1="445" x2="610" y2="530" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="590" y1="487" x2="630" y2="487" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Horizontal accent band -->
+    <rect x="520" y="430" width="120" height="8" fill="#b3daf0"/>
+  </g>
+  
+  <!-- Front entrance platform -->
+  <g>
+    <ellipse cx="450" cy="545" rx="90" ry="8" fill="#c8e4f4" opacity="0.6"/>
+    <rect x="420" y="540" width="60" height="5" rx="2" fill="#d1e9f7" opacity="0.5"/>
+  </g>
+  
+  <!-- Decorative trees/bushes - front -->
+  <g opacity="0.6">
+    <!-- Left tree -->
+    <ellipse cx="320" cy="520" rx="25" ry="35" fill="url(#treeGrad)"/>
+    <ellipse cx="310" cy="525" rx="20" ry="30" fill="#c8e4f4" opacity="0.5"/>
+    <rect x="316" y="535" width="8" height="25" rx="4" fill="#b3daf0" opacity="0.6"/>
+    
+    <!-- Right tree -->
+    <ellipse cx="580" cy="520" rx="25" ry="35" fill="url(#treeGrad)"/>
+    <ellipse cx="590" cy="525" rx="20" ry="30" fill="#c8e4f4" opacity="0.5"/>
+    <rect x="576" y="535" width="8" height="25" rx="4" fill="#b3daf0" opacity="0.6"/>
+    
+    <!-- Front small bushes -->
+    <ellipse cx="380" cy="545" rx="20" ry="15" fill="#c8e4f4" opacity="0.7"/>
+    <ellipse cx="520" cy="545" rx="20" ry="15" fill="#c8e4f4" opacity="0.7"/>
+  </g>
+  
+  <!-- Background trees - right -->
+  <g opacity="0.4" filter="url(#lightBlur)">
+    <ellipse cx="680" cy="485" rx="38" ry="62" fill="url(#treeGrad)"/>
+    <ellipse cx="650" cy="475" rx="42" ry="68" fill="url(#treeGrad)"/>
+    <ellipse cx="670" cy="495" rx="32" ry="52" fill="#c8e4f4" opacity="0.6"/>
+  </g>
+  
+  <!-- Subtle clouds -->
+  <g opacity="0.3">
+    <ellipse cx="150" cy="100" rx="80" ry="25" fill="#c8e4f4"/>
+    <ellipse cx="200" cy="110" rx="70" ry="22" fill="#d1e9f7"/>
+    
+    <ellipse cx="600" cy="80" rx="90" ry="28" fill="#c8e4f4"/>
+    <ellipse cx="660" cy="95" rx="75" ry="24" fill="#d1e9f7"/>
+  </g>
+  
+  <!-- Small decorative book icon (education symbol) -->
+  <g transform="translate(430, 480)" opacity="0.5">
+    <rect x="0" y="0" width="16" height="12" rx="1" fill="#5eb3e8"/>
+    <rect x="2" y="2" width="12" height="8" rx="0.5" fill="#ffffff" opacity="0.4"/>
+    <line x1="8" y1="2" x2="8" y2="10" stroke="#ffffff" stroke-width="0.5" opacity="0.6"/>
+  </g>
+</svg>

@@ -1,0 +1,66 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6eb8d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a9fb8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffa94d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c1a;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="softShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.25"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <g filter="url(#softShadow)">
+    <!-- Document/Folder -->
+    <path d="M 50 80 L 50 130 Q 50 135 55 135 L 110 135 Q 115 135 115 130 L 115 80 Z" fill="url(#blueGrad)"/>
+    <path d="M 50 80 L 70 75 L 90 80 Z" fill="#4a9fb8"/>
+    
+    <!-- Document lines -->
+    <rect x="60" y="90" width="35" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+    <rect x="60" y="100" width="40" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+    <rect x="60" y="110" width="30" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+    <rect x="60" y="120" width="38" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+    
+    <!-- Clock/Timer -->
+    <circle cx="130" cy="105" r="28" fill="url(#orangeGrad)"/>
+    <circle cx="130" cy="105" r="23" fill="#ffffff" opacity="0.95"/>
+    <circle cx="130" cy="105" r="20" fill="url(#orangeGrad)" opacity="0.15"/>
+    
+    <!-- Clock hands -->
+    <line x1="130" y1="105" x2="130" y2="92" stroke="#ff8c1a" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="130" y1="105" x2="140" y2="105" stroke="#ff8c1a" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Clock center dot -->
+    <circle cx="130" cy="105" r="3" fill="#ff8c1a"/>
+    
+    <!-- Clock tick marks -->
+    <circle cx="130" cy="88" r="2" fill="#ff8c1a" opacity="0.6"/>
+    <circle cx="148" cy="105" r="2" fill="#ff8c1a" opacity="0.6"/>
+    <circle cx="130" cy="122" r="2" fill="#ff8c1a" opacity="0.6"/>
+    <circle cx="112" cy="105" r="2" fill="#ff8c1a" opacity="0.6"/>
+    
+    <!-- Scattered document pieces (to show "tersebar") -->
+    <g opacity="0.6">
+      <rect x="40" y="145" width="25" height="18" rx="2" fill="#b8d9e8"/>
+      <rect x="44" y="150" width="17" height="2" rx="1" fill="#4a9fb8"/>
+      <rect x="44" y="155" width="14" height="2" rx="1" fill="#4a9fb8"/>
+      
+      <rect x="100" y="148" width="28" height="16" rx="2" fill="#b8d9e8"/>
+      <rect x="104" y="152" width="20" height="2" rx="1" fill="#4a9fb8"/>
+      <rect x="104" y="157" width="16" height="2" rx="1" fill="#4a9fb8"/>
+    </g>
+  </g>
+</svg>
