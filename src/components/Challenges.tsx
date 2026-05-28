@@ -15,10 +15,9 @@ export default function Challenges() {
       <div class="container challenges-container">
         <Reveal>
           <div class="section-header text-center">
-            <h2 class="challenges-title">Tantangan Umum Lembaga Pendidikan Saat Ini</h2>
+            <h2 class="challenges-title">Tantangan Digitalisasi Sekolah dan Lembaga Pendidikan</h2>
             <p class="challenges-subtitle">
-              Banyak lembaga pendidikan masih menghadapi kendala klasik yang
-              menghambat kinerja dan transparansi.
+              Banyak sekolah dan lembaga pendidikan masih menghadapi proses administrasi manual, data yang tersebar, dan monitoring operasional yang belum terintegrasi secara real-time.
             </p>
           </div>
         </Reveal>
@@ -57,7 +56,7 @@ export default function Challenges() {
             <div class="challenges-dashboard-preview">
               <img
                 src="/assets/section2_dashboard.png"
-                alt="Dashboard Preview"
+                alt="Dashboard sistem ERP sekolah dan monitoring siswa"
                 class="dashboard-img-actual"
               />
             </div>

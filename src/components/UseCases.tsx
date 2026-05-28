@@ -11,10 +11,10 @@ export default function UseCases() {
         <Reveal>
           <div class="section-header text-center">
             <h2 class="use-cases-title">
-              Satu Platform untuk Berbagai Jenis Lembaga Pendidikan
+              Platform Digital Terintegrasi untuk Berbagai Lembaga Pendidikan
             </h2>
             <p class="use-cases-subtitle">
-              NatiX dirancang fleksibel dan relevan untuk berbagai kebutuhan institusi pendidikan, antara lain:
+              NatiX menghadirkan ekosistem ERP terintegrasi untuk sekolah dan institusi pendidikan — mulai dari administrasi akademik, pembayaran digital, broadcast informasi, hingga monitoring orang tua dan operasional multi unit.
             </p>
           </div>
         </Reveal>

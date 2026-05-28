@@ -552,10 +552,11 @@ ul {
 }
 
 .use-cases-subtitle {
-  font-size: 1.125rem;
-  color: var(--text-muted);
-  max-width: 640px;
-  margin: 0 auto 48px;
+ font-size: 1.05rem;
+  color: #64748b;
+  max-width: 980px;
+  margin: 0 auto;
+  line-height: 1.55;
 }
 
 .use-cases-horizontal {
