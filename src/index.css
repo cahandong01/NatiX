@@ -345,7 +345,7 @@ ul {
   .hero-grid { grid-template-columns: 1fr; gap: 20px; }
   .hero-content { max-width: 100%; padding-right: 0; }
   .hero-buttons { justify-content: center; }
-  .hero-illustration-wrapper { min-height: auto; height: auto; }
+  .hero-illustration-wrapper { min-height: auto; height: auto;   transform: none; }
   .hero-illustration { max-width: 100%; max-height: 40vh; transform: scale(1.2); }
 }
 
@@ -390,14 +390,16 @@ ul {
   font-size: 2rem;
   font-weight: 700;
   color: #1f2a37;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .challenges-subtitle {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  max-width: 720px;
+  max-width: 820px;
   margin: 0 auto;
+  line-height: 1.7;
+  text-align: center;
 }
 
 .challenges-grid {
@@ -1064,7 +1066,7 @@ ul {
   position: fixed;
   bottom: 30px; right: 30px;
   width: 50px; height: 50px;
-  background: var(--primary-blue);
+  background: #25D366;
   color: white;
   border: none;
   border-radius: 50%;
@@ -1087,7 +1089,7 @@ ul {
 }
 
 .back-to-top:hover {
-  background: #004499;
+  background: #1ebe5d;
   transform: translateY(-3px);
   box-shadow: 0 6px 25px rgba(0, 86, 179, 0.4);
 }
