@@ -40,7 +40,7 @@ export default function Hero() {
               </p>
               <div class="hero-buttons">
                 <a 
-                  href="https://wa.me/6289525841982?text=Halo%2C%20saya%20ingin%20meminta%20demo%20NatiX" 
+                  href="https://wa.me/6285815227572?text=Halo%2C%20saya%20ingin%20meminta%20demo%20NatiX" 
                   class="btn btn-primary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -48,7 +48,7 @@ export default function Hero() {
                   Minta Demo
                 </a>
                 <a 
-                  href="https://wa.me/6289525841982?text=Halo%2C%20saya%20ingin%20konsultasi%20gratis%20tentang%20NatiX" 
+                  href="https://wa.me/6285815227572?text=Halo%2C%20saya%20ingin%20konsultasi%20gratis%20tentang%20NatiX" 
                   class="btn btn-outline-light"
                   target="_blank"
                   rel="noopener noreferrer"

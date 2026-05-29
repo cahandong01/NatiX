@@ -104,7 +104,8 @@ export default function Footer() {
           </div>
           <span class="footer-separator">|</span>
           <a
-            href="https://wa.me/6289525841982?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20NatiX"
+            href="https://wa.me/6285815227572
+            ?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20NatiX"
             class="footer-item footer-item-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -116,7 +117,7 @@ export default function Footer() {
             </span>
             <span class="footer-item-text">
               <span>Konsultasi via WhatsApp</span>
-              <span class="footer-phone">0895 2584 1982</span>
+              <span class="footer-phone">0858 1522 7572</span>
             </span>
           </a>
           <span class="footer-separator">|</span>
