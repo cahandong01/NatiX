@@ -342,7 +342,7 @@ ul {
     padding: 100px 0 40px;
     text-align: center;
   }
-  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-content { max-width: 100%; padding-right: 0; }
   .hero-buttons { justify-content: center; }
   .hero-illustration-wrapper { min-height: auto; height: auto;   transform: none; }
