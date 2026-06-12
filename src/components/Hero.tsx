@@ -1,20 +1,24 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
 import Reveal from "./Reveal";
 
-export default function Hero() {
-  const [scrollY, setScrollY] = createSignal(0);
-
+// Helper hook agar Hero.jsx tetap bersih dan maintainable
+function useParallax(speed = 0.4) {
+  const [offset, setOffset] = createSignal(0);
+  
   const handleScroll = () => {
-    setScrollY(window.scrollY);
+    requestAnimationFrame(() => {
+      setOffset(window.scrollY * speed);
+    });
   };
 
-  onMount(() => {
-    window.addEventListener("scroll", handleScroll);
-  });
+  onMount(() => window.addEventListener("scroll", handleScroll, { passive: true }));
+  onCleanup(() => window.removeEventListener("scroll", handleScroll));
 
-  onCleanup(() => {
-    window.removeEventListener("scroll", handleScroll);
-  });
+  return offset;
+}
+
+export default function Hero() {
+  const scrollOffset = useParallax(0.4);
 
   return (
     <section class="hero-section">
@@ -24,20 +28,24 @@ export default function Hero() {
           alt="NatiX Hero Background"
           class="hero-bg-img"
           style={{
-            transform: `translateY(${scrollY() * 0.4}px) scale(1.1)`,
-            transition: "transform 0.1s ease-out"
+            transform: `translateY(${scrollOffset()}px) scale(1.1)`,
+            "will-change": "transform"
           }}
         />
       </div>
-      
+
       <div class="container hero-container">
         <div class="hero-grid">
           <Reveal>
             <div class="hero-content">
               <h1 class="hero-title">Satu Sistem, Semua Tertata</h1>
               <p class="hero-subtitle">
-                  Platform ERP terintegrasi untuk digitalisasi total seluruh ekosistem dan institusi pendidikan. Kendalikan manajemen akademik, administrasi keuangan, hingga tata kelola fasilitas asrama dan aktivitas harian dalam satu infrastruktur modern yang terpusat, aman, dan berskala enterprise
+                Platform ERP terintegrasi untuk digitalisasi total seluruh ekosistem dan 
+                institusi pendidikan. Kendalikan manajemen akademik, administrasi keuangan, 
+                hingga tata kelola fasilitas asrama dan aktivitas harian dalam satu 
+                infrastruktur modern yang terpusat, aman, dan berskala enterprise.
               </p>
+              
               <div class="hero-buttons">
                 <a 
                   href="https://wa.me/6285815227572?text=Halo%2C%20saya%20ingin%20meminta%20demo%20NatiX" 
@@ -70,8 +78,8 @@ export default function Hero() {
           </Reveal>
         </div>
       </div>
+      
       <div class="hero-wave-silhouette"></div>
     </section>
   );
 }
-
