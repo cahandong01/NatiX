@@ -33,7 +33,7 @@ const HeaderContent = (props: {
       </nav>
       <div class="sticky-buttons">
         <a
-          href="#"
+          href="https://demo.natix.id"
           class="sticky-cta-outline"
           target="_blank"
           rel="noopener noreferrer"
@@ -156,7 +156,7 @@ export default function StickyHeader() {
         </nav>
         <div class="mobile-menu-buttons">
           <a
-            href="#"
+            href="https://demo.natix.id"
             class="mobile-cta-outline"
             target="_blank"
             rel="noopener noreferrer"
