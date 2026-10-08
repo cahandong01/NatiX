@@ -100,7 +100,7 @@ export default function Footer() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </span>
-            <span>Magelang, Jawa Tengah</span>
+            <span>Sleman Yogyakarta,Jawa Tengah</span>
           </div>
           <span class="footer-separator">|</span>
           <a
