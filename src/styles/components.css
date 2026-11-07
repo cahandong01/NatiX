@@ -1,0 +1,419 @@
+/* Komponen bersama. Semua nilai berasal dari tokens.css. */
+
+/* ---------- Tata letak ---------- */
+.nx-container {
+  width: 100%;
+  max-width: calc(var(--nx-container) + var(--nx-gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--nx-gutter);
+}
+
+.nx-section {
+  padding-block: var(--nx-section-y);
+  background: var(--nx-bg);
+}
+
+.nx-section--soft {
+  background: var(--nx-bg-soft);
+}
+
+.nx-section--dark {
+  background: var(--nx-navy);
+  color: #fff;
+}
+
+/* ---------- Teks ---------- */
+.nx-eyebrow {
+  margin: 0 0 20px;
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nx-blue);
+}
+
+.nx-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  margin-right: 12px;
+  vertical-align: middle;
+  background: var(--nx-warm);
+}
+
+.nx-display {
+  max-width: 18ch;
+  margin: 0;
+  font-family: var(--nx-font-heading);
+  font-size: var(--nx-fs-display);
+  font-weight: 600;
+  line-height: var(--nx-lh-tight);
+  letter-spacing: -0.02em;
+  color: var(--nx-navy);
+  text-wrap: balance;
+}
+
+.nx-accent {
+  color: var(--nx-blue);
+}
+
+.nx-lead {
+  max-width: 56ch;
+  margin: 28px 0 0;
+  font-size: var(--nx-fs-lead);
+  line-height: var(--nx-lh-body);
+  color: var(--nx-ink-soft);
+  text-wrap: pretty;
+}
+
+/* ---------- Tombol ---------- */
+.nx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 26px;
+  border: 1px solid transparent;
+  border-radius: var(--nx-r-md);
+  font-family: var(--nx-font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--nx-dur-fast) var(--nx-ease-out),
+    box-shadow var(--nx-dur-base) var(--nx-ease-out),
+    transform var(--nx-dur-base) var(--nx-ease-out),
+    border-color var(--nx-dur-fast) var(--nx-ease-out);
+}
+
+.nx-btn--primary {
+  background: var(--nx-blue);
+  color: #fff;
+  box-shadow: var(--nx-shadow-1);
+}
+
+.nx-btn--primary:hover {
+  background: var(--nx-blue-strong);
+  box-shadow: var(--nx-shadow-2);
+  transform: translateY(-1px);
+}
+
+.nx-btn--secondary {
+  background: var(--nx-bg);
+  color: var(--nx-navy);
+  border-color: var(--nx-line);
+}
+
+.nx-btn--secondary:hover {
+  border-color: var(--nx-navy);
+  transform: translateY(-1px);
+}
+
+.nx-btn:active {
+  transform: translateY(0);
+}
+
+.nx-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+/* ---------- Pembuka halaman ---------- */
+.nx-page-hero {
+  position: relative;
+  padding-block: clamp(56px, 8vw, 120px) clamp(72px, 9vw, 136px);
+  background:
+    radial-gradient(60% 80% at 85% 0%, rgb(37 99 235 / 10%), transparent 70%),
+    linear-gradient(180deg, var(--nx-bg) 0%, var(--nx-bg-soft) 100%);
+}
+
+/* ---------- Header ---------- */
+.nx-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--nx-z-header);
+  background: rgb(255 255 255 / 82%);
+  border-bottom: 1px solid transparent;
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  transition:
+    border-color var(--nx-dur-base) var(--nx-ease-out),
+    box-shadow var(--nx-dur-base) var(--nx-ease-out);
+}
+
+.nx-header--scrolled {
+  border-bottom-color: var(--nx-line);
+  box-shadow: var(--nx-shadow-1);
+}
+
+.nx-header__bar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: var(--nx-header-h);
+}
+
+.nx-header__logo {
+  display: flex;
+  flex: none;
+}
+
+.nx-header__logo img {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+.nx-nav {
+  display: none;
+  flex: 1;
+  justify-content: center;
+  gap: 4px;
+}
+
+.nx-nav__link {
+  position: relative;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--nx-ink);
+  white-space: nowrap;
+  transition: color var(--nx-dur-fast) var(--nx-ease-out);
+}
+
+.nx-nav__link::after {
+  content: "";
+  position: absolute;
+  inset: auto 14px 4px;
+  height: 2px;
+  background: var(--nx-warm);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--nx-dur-base) var(--nx-ease-out);
+}
+
+.nx-nav__link:hover {
+  color: var(--nx-blue);
+}
+
+.nx-nav__link[aria-current="page"] {
+  color: var(--nx-blue);
+}
+
+.nx-nav__link:hover::after,
+.nx-nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nx-header__cta {
+  display: none;
+  flex: none;
+}
+
+.nx-burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: 0 11px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.nx-burger span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--nx-navy);
+  transition: transform var(--nx-dur-base) var(--nx-ease-out);
+}
+
+.nx-burger[aria-expanded="true"] span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nx-burger[aria-expanded="true"] span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.nx-menu {
+  position: absolute;
+  inset: 100% 0 auto;
+  height: calc(100dvh - var(--nx-header-h));
+  background: var(--nx-bg);
+  border-top: 1px solid var(--nx-line);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity var(--nx-dur-base) var(--nx-ease-out),
+    transform var(--nx-dur-base) var(--nx-ease-out),
+    visibility 0s linear var(--nx-dur-base);
+}
+
+.nx-menu--open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.nx-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 24px var(--nx-gutter) 40px;
+}
+
+.nx-menu__link {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--nx-line);
+  font-family: var(--nx-font-heading);
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: var(--nx-navy);
+}
+
+.nx-menu__link[aria-current="page"] {
+  color: var(--nx-blue);
+}
+
+.nx-menu__nav .nx-btn {
+  margin-top: 24px;
+}
+
+@media (min-width: 1180px) {
+  .nx-nav,
+  .nx-header__cta {
+    display: flex;
+  }
+
+  .nx-burger,
+  .nx-menu {
+    display: none;
+  }
+}
+
+/* ---------- Footer ---------- */
+.nx-footer {
+  padding-block: 72px 32px;
+  background: var(--nx-bg);
+  border-top: 1px solid var(--nx-line);
+}
+
+.nx-footer__grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+}
+
+.nx-footer__brand img {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+.nx-footer__tagline {
+  margin: 20px 0 4px;
+  font-family: var(--nx-font-heading);
+  font-size: 1.25rem;
+  color: var(--nx-navy);
+}
+
+.nx-footer__muted {
+  margin: 0;
+  font-size: var(--nx-fs-small);
+  color: var(--nx-ink-muted);
+}
+
+.nx-footer__title {
+  margin: 0 0 16px;
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nx-ink-muted);
+}
+
+.nx-footer li + li {
+  margin-top: 10px;
+}
+
+.nx-footer li a {
+  font-size: 0.9375rem;
+  color: var(--nx-ink);
+}
+
+.nx-footer li a:hover {
+  color: var(--nx-blue);
+}
+
+.nx-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--nx-line);
+  font-size: var(--nx-fs-small);
+  color: var(--nx-ink-muted);
+}
+
+@media (min-width: 768px) {
+  .nx-footer__grid {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 48px;
+  }
+}
+
+/* ---------- Layar pembuka ---------- */
+.nx-intro {
+  position: fixed;
+  inset: 0;
+  z-index: var(--nx-z-intro);
+  display: grid;
+  place-items: center;
+  background: var(--nx-bg);
+  /* Jaring pengaman tanpa JavaScript: tetap menghilang sendiri. */
+  animation: nx-intro-out var(--nx-dur-slow) var(--nx-ease-out) 2.5s forwards;
+}
+
+.nx-intro img {
+  width: 196px;
+  height: auto;
+  animation: nx-intro-in var(--nx-dur-slow) var(--nx-ease-out) both;
+}
+
+.nx-intro--leave {
+  animation: nx-intro-out 400ms var(--nx-ease-out) forwards;
+}
+
+.nx-no-intro .nx-intro {
+  display: none;
+}
+
+@keyframes nx-intro-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes nx-intro-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

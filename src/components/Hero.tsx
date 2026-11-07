@@ -11,8 +11,10 @@ function useParallax(speed = 0.4) {
     });
   };
 
-  onMount(() => window.addEventListener("scroll", handleScroll, { passive: true }));
-  onCleanup(() => window.removeEventListener("scroll", handleScroll));
+  onMount(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    onCleanup(() => window.removeEventListener("scroll", handleScroll));
+  });
 
   return offset;
 }

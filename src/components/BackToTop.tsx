@@ -14,11 +14,8 @@ export default function BackToTop() {
   };
 
   onMount(() => {
-    window.addEventListener("scroll", handleScroll);
-  });
-
-  onCleanup(() => {
-    window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    onCleanup(() => window.removeEventListener("scroll", handleScroll));
   });
 
   return (

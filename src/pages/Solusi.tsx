@@ -1,17 +1,15 @@
-import StickyHeader from "../components/StickyHeader";
-import Footer from "../components/Footer";
+import Button from "../components/Button";
+import PageHero from "../components/PageHero";
+import { DEMO_LINK } from "../site";
 
 export default function Solusi() {
   return (
-    <>
-      <StickyHeader />
-      <main>
-      <section aria-labelledby="solusi-title">
-        <h1 id="solusi-title">Solusi NatiX</h1>
-        <p>Solusi terintegrasi untuk kebutuhan operasional lembaga pendidikan.</p>
-      </section>
-      </main>
-      <Footer />
-    </>
+    <PageHero
+      eyebrow="Solusi"
+      title={<>Sesuai cara kerja <span class="nx-accent">lembaga Anda</span></>}
+      lead="Sekolah, pesantren dan boarding, atau yayasan dengan banyak lembaga: setiap jalur memakai bahasa lapangannya sendiri."
+    >
+      <Button href={DEMO_LINK}>Minta Demo</Button>
+    </PageHero>
   );
 }

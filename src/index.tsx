@@ -1,22 +1,16 @@
-import "@fontsource-variable/fraunces";
-import "@fontsource-variable/inter";
+import "@fontsource-variable/fraunces/wght.css";
+import "@fontsource-variable/inter/wght.css";
+import "./styles/tokens.css";
+import "./index.css";
+import "./styles/base.css";
+import "./styles/components.css";
 
 /* @refresh reload */
-import { render } from 'solid-js/web'
-import { Router, Route } from '@solidjs/router'
-import './index.css'
-import App from './App.tsx'
-import Platform from './pages/Platform.tsx'
-import Solusi from './pages/Solusi.tsx'
-import Kontak from './pages/Kontak.tsx'
+import { hydrate, render } from "solid-js/web";
+import AppRouter from "./AppRouter";
 
-const root = document.getElementById('root')
+const root = document.getElementById("root")!;
 
-render(() => (
-  <Router>
-    <Route path="/" component={App} />
-    <Route path="/platform" component={Platform} />
-    <Route path="/solusi" component={Solusi} />
-    <Route path="/kontak" component={Kontak} />
-  </Router>
-), root!)
+// Build produksi: HTML sudah dirender per rute, cukup dihidupkan. Mode dev: render biasa.
+if (root.hasChildNodes()) hydrate(() => <AppRouter />, root);
+else render(() => <AppRouter />, root);

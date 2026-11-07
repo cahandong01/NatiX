@@ -1,0 +1,104 @@
+/* Aturan dasar lintas halaman: fokus, tautan lompat, gerak. */
+:focus-visible {
+  outline: 2px solid var(--nx-blue-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.nx-skip {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: calc(var(--nx-z-intro) + 1);
+  padding: 10px 16px;
+  border-radius: var(--nx-r-sm);
+  background: var(--nx-navy);
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform var(--nx-dur-fast) var(--nx-ease-out);
+}
+
+.nx-skip:focus {
+  transform: none;
+}
+
+.nx-no-scroll {
+  overflow: hidden;
+}
+
+/* Muncul halus saat digulir, murni CSS. Tanpa dukungan browser, konten tampil biasa. */
+@supports (animation-timeline: view()) {
+  .nx-reveal {
+    animation: nx-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+@keyframes nx-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+/* Penanda progres gulir, murni CSS. */
+.nx-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--nx-z-menu);
+  height: 3px;
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .nx-progress {
+    background: linear-gradient(90deg, var(--nx-blue), var(--nx-warm));
+    transform-origin: 0 50%;
+    animation: nx-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes nx-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Perpindahan antar halaman. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--nx-dur-base);
+  animation-timing-function: var(--nx-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .nx-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .nx-progress,
+  .nx-intro {
+    display: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
