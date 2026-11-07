@@ -104,8 +104,7 @@ export default function Footer() {
           </div>
           <span class="footer-separator">|</span>
           <a
-            href="https://wa.me/6285815227572
-            ?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20NatiX"
+            href="https://wa.me/6285815227572?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20NatiX"
             class="footer-item footer-item-link"
             target="_blank"
             rel="noopener noreferrer"

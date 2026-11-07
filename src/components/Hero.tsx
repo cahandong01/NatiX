@@ -38,7 +38,7 @@ export default function Hero() {
         <div class="hero-grid">
           <Reveal>
             <div class="hero-content">
-              <h1 class="hero-title">Satu Sistem, Semua Tertata</h1>
+              <h1 class="hero-title">Satu Sistem, <span class="hero-title-accent">Semua Tertata</span></h1>
               <p class="hero-subtitle">
                 Platform ERP terintegrasi untuk digitalisasi total seluruh ekosistem dan 
                 institusi pendidikan. Kendalikan manajemen akademik, administrasi keuangan, 

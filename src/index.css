@@ -8,8 +8,8 @@
   --border-radius: 12px;
   --card-radius: 16px;
   --container-width: 1240px;
-  --font-heading: "Poppins", "Segoe UI", sans-serif;
-  --font-body: "Poppins", "Segoe UI", sans-serif;
+  --font-heading: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-body: "Inter Variable", "Segoe UI", sans-serif;
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
   --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.1);
   --section-spacing: 112px;
@@ -285,6 +285,10 @@ ul {
   font-weight: 700;
   margin-bottom: 24px;
   line-height: 1.2;
+  color: #0A1628;
+}
+
+.hero-title-accent {
   background: linear-gradient(135deg, var(--primary-blue) 0%, #2563eb 100%);
   -webkit-background-clip: text;
   background-clip: text;

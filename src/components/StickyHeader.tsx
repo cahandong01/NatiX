@@ -1,9 +1,11 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
+import { useNavigate } from "@solidjs/router";
 
 const HeaderContent = (props: {
   mobileMenuOpen: () => boolean;
   toggleMobileMenu: () => void;
   scrollToSection: (id: string) => void;
+  navigateTo: (path: string) => void;
 }) => {
   return (
     <div class="sticky-header-content">
@@ -18,17 +20,17 @@ const HeaderContent = (props: {
         />
       </div>
       <nav class="sticky-nav">
-        <button onClick={() => props.scrollToSection(".hero-section")}>
+        <button onClick={() => props.navigateTo("/")}>
           Beranda
         </button>
-        <button onClick={() => props.scrollToSection(".challenges-section")}>
-          Tantangan
+        <button onClick={() => props.navigateTo("/platform")}>
+          Platform
         </button>
-        <button onClick={() => props.scrollToSection(".use-cases-section")}>
+        <button onClick={() => props.navigateTo("/solusi")}>
           Solusi
         </button>
-        <button onClick={() => props.scrollToSection(".benefits-section")}>
-          Keunggulan
+        <button onClick={() => props.navigateTo("/kontak")}>
+          Hubungi Kami
         </button>
       </nav>
       <div class="sticky-buttons">
@@ -57,6 +59,7 @@ const HeaderContent = (props: {
 };
 
 export default function StickyHeader() {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = createSignal(false);
   const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
 
@@ -82,6 +85,12 @@ export default function StickyHeader() {
     setMobileMenuOpen(false);
   };
 
+  const navigateTo = (path: string) => {
+    setMobileMenuOpen(false);
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen());
   };
@@ -94,6 +103,7 @@ export default function StickyHeader() {
           mobileMenuOpen={mobileMenuOpen}
           toggleMobileMenu={toggleMobileMenu}
           scrollToSection={scrollToSection}
+          navigateTo={navigateTo}
         />
       </header>
 
@@ -103,6 +113,7 @@ export default function StickyHeader() {
           mobileMenuOpen={mobileMenuOpen}
           toggleMobileMenu={toggleMobileMenu}
           scrollToSection={scrollToSection}
+          navigateTo={navigateTo}
         />
       </header>
 
@@ -141,17 +152,17 @@ export default function StickyHeader() {
           </button>
         </div>
         <nav class="mobile-menu-nav">
-          <button onClick={() => scrollToSection(".hero-section")}>
+          <button onClick={() => navigateTo("/")}>
             Beranda
           </button>
-          <button onClick={() => scrollToSection(".challenges-section")}>
-            Tantangan
+          <button onClick={() => navigateTo("/platform")}>
+            Platform
           </button>
-          <button onClick={() => scrollToSection(".use-cases-section")}>
+          <button onClick={() => navigateTo("/solusi")}>
             Solusi
           </button>
-          <button onClick={() => scrollToSection(".benefits-section")}>
-            Keunggulan
+          <button onClick={() => navigateTo("/kontak")}>
+            Hubungi Kami
           </button>
         </nav>
         <div class="mobile-menu-buttons">

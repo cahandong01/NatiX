@@ -14,7 +14,7 @@ export default function LoadingScreen() {
     <Show when={loading()}>
       <div class="loading-screen">
         <div class="loading-content">
-          <div class="loading-logo">NatiX</div>
+          <div class="loading-logo"><img src="/assets/svg/logonatix.png" alt="NatiX" style={{ width: "100px", height: "auto", display: "block", margin: "0 auto" }} /></div>
           <div class="loading-spinner">
             <div class="spinner-ring"></div>
           </div>
