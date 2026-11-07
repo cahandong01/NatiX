@@ -254,6 +254,9 @@ ul {
 
 .hero-illustration-wrapper {
   position: relative;
+  /* margin-top 4% mengimbangi pembesaran 1,2x agar sisi atas gambar sejajar dengan judul */
+  margin-top: 4%;
+  transform: translateX(-80px);
 }
 
 .hero-illustration {
@@ -261,6 +264,8 @@ ul {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 20px 40px rgba(0, 86, 179, 0.1));
+  transform: scale(1.2);
+  transform-origin: center center;
 }
 
 .hero-buttons {
@@ -287,6 +292,8 @@ ul {
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-content { max-width: 100%; padding-right: 0; }
   .hero-buttons { justify-content: center; }
+  .hero-illustration-wrapper { margin-top: 0; transform: none; }
+  .hero-illustration { transform: none; }
 }
 
 /* Challenges Section */
