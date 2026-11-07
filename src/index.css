@@ -180,14 +180,10 @@ ul {
 
 /* Hero Section */
 .hero-section {
-  padding: 80px 0 0 0;
+  padding: clamp(40px, 5vw, 72px) 0 clamp(96px, 10vw, 144px);
   background-color: var(--white);
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
-  height: 100vh;
-  display: flex;
-  align-items: center;
 }
 
 .hero-bg-wrapper {
@@ -214,7 +210,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero-content {
@@ -257,24 +253,14 @@ ul {
 }
 
 .hero-illustration-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  min-height: 70vh;
   position: relative;
-  transform: translateX(-80px);
 }
 
 .hero-illustration {
+  display: block;
   width: 100%;
-  max-width: none;
   height: auto;
-  max-height: 85vh;
-  object-fit: contain;
   filter: drop-shadow(0 20px 40px rgba(0, 86, 179, 0.1));
-  transform: scale(1.2);
-  transform-origin: center center;
 }
 
 .hero-buttons {
@@ -295,16 +281,12 @@ ul {
 
 @media (max-width: 991px) {
   .hero-section {
-    height: auto;
-    min-height: 100vh;
-    padding: 100px 0 40px;
+    padding: 40px 0 96px;
     text-align: center;
   }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-content { max-width: 100%; padding-right: 0; }
   .hero-buttons { justify-content: center; }
-  .hero-illustration-wrapper { min-height: auto; height: auto;   transform: none; }
-  .hero-illustration { max-width: 100%; max-height: 40vh; transform: scale(1.2); }
 }
 
 /* Challenges Section */
