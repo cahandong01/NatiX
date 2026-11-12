@@ -111,7 +111,8 @@
     var(--nx-home-depth-start);
 }
 
-.nx-home .nx-home-closing {
+.nx-home > section.nx-home-closing {
+  padding-block: 32px;
   border-top-color: color-mix(in srgb, var(--nx-blue-accent) 65%, var(--nx-blue));
   background:
     radial-gradient(ellipse at 85% 0%, color-mix(in srgb, var(--nx-blue-accent) 55%, transparent), transparent 65%),
@@ -232,6 +233,8 @@
 }
 .nx-home .nx-value-chain__card { background: linear-gradient(150deg, var(--nx-bg), color-mix(in srgb, var(--nx-tint) 60%, var(--nx-bg))); }
 
+.nx-home .nx-home-closing h2 { margin-bottom: 8px; }
+
 .nx-home .nx-home-closing__panel {
   padding-block: 0;
   background: none;
@@ -267,6 +270,7 @@
 
 @media (max-width: 991px) {
   .nx-home .hero-section { padding-block: 40px; }
+  .nx-home .nx-home-closing__panel { gap: 20px; }
   .nx-home .hero-subtitle { margin-inline: auto; }
   .nx-home :is(.nx-value-chain__heading h2, .challenges-title, .nx-solutions-preview h2, .nx-executive h2, .nx-family-teaser h2, .benefits-title, .nx-start h2, .nx-home-closing h2) { font-size: 1.75rem; }
   .nx-home .nx-value-chain__heading { margin-bottom: 40px; }
@@ -296,3 +300,4 @@
   .nx-home .benefit-card:hover .benefit-card-icon,
   .nx-home .nx-start__card:hover { transform: none; }
 }
+
