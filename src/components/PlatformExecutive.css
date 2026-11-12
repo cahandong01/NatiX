@@ -1,0 +1,98 @@
+/* Section 2: ukuran judul dan jarak mengikuti section 2 Beranda. */
+.nx-platform-executive {
+  padding-block: 60px;
+  background:
+    radial-gradient(ellipse at 15% 45%, rgb(255 255 255 / 65%), transparent 65%),
+    var(--nx-tint);
+}
+
+.nx-platform-executive__grid {
+  --nx-gutter: clamp(20px, 3vw, 40px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 48px;
+}
+
+.nx-platform-executive__visual { position: relative; min-width: 0; }
+.nx-platform-executive__visual figure { position: absolute; inset: 0; min-height: 4.8em;
+  margin: 0; }
+.nx-platform-executive__visual picture { display: block; height: 100%; }
+.nx-platform-executive__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.nx-platform-executive__content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.nx-platform-executive__eyebrow {
+  margin: 0 0 8px;
+  color: var(--nx-blue);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.nx-platform-executive h2 {
+  margin: 0 0 16px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: var(--nx-lh-heading);
+  text-wrap: balance;
+}
+
+.nx-platform-executive h2 span { color: var(--nx-blue); }
+.nx-platform-executive__lead {
+  max-width: 56ch;
+  margin: 0 0 16px;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+  text-wrap: pretty;
+}
+
+.nx-platform-executive__points {
+
+  align-content: start;
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-platform-executive__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--nx-ink);
+  font-size: var(--nx-fs-small);
+  line-height: var(--nx-lh-body);
+}
+
+.nx-platform-executive__points svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: var(--nx-blue);
+}
+
+@media (max-width: 991px) {
+  .nx-platform-executive__grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .nx-platform-executive__content { grid-row: 1; }
+  .nx-platform-executive__visual figure { position: static; }
+  .nx-platform-executive__visual picture { height: auto; }
+  .nx-platform-executive__image { height: auto; }
+  .nx-platform-executive h2 { font-size: 1.75rem; }
+}

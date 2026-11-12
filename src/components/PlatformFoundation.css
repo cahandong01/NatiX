@@ -1,0 +1,66 @@
+.nx-platform-foundation {
+  padding-block: 60px;
+  background:
+    radial-gradient(ellipse at 48% 65%, color-mix(in srgb, var(--nx-blue) 6%, transparent), transparent 65%),
+    linear-gradient(180deg, var(--nx-bg), var(--nx-tint));
+}
+.nx-platform-foundation__grid {
+  --nx-gutter: clamp(20px, 3vw, 40px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px 48px;
+}
+.nx-platform-foundation__grid > * { min-width: 0; }
+.nx-platform-foundation__panel {
+  align-self: stretch;
+  padding: clamp(20px, 2.4vw, 32px);
+  border: 1px solid transparent;
+  border-radius: var(--nx-r-lg);
+  background:
+    linear-gradient(145deg, var(--nx-bg), color-mix(in srgb, var(--nx-tint) 55%, var(--nx-bg))) padding-box,
+    linear-gradient(135deg, var(--nx-bg), color-mix(in srgb, var(--nx-blue) 25%, var(--nx-line)) 55%, var(--nx-bg)) border-box;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 95%), 0 2px 4px rgb(11 31 58 / 4%), 0 16px 36px rgb(0 86 179 / 8%);
+}
+.nx-platform-foundation__visual { display: grid; align-content: center; }
+.nx-platform-foundation__content { grid-column: 1 / -1; width: 100%; max-width: 900px; margin-inline: auto; text-align: center; }
+.nx-platform-foundation__eyebrow {
+  margin: 0 0 8px;
+  color: var(--nx-blue);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+.nx-platform-foundation h2 {
+  margin: 0 0 16px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: var(--nx-lh-heading);
+  text-wrap: balance;
+}
+.nx-platform-foundation h2 span { color: var(--nx-blue); }
+.nx-platform-foundation__lead { max-width: 68ch; margin: 0 auto; color: var(--nx-ink-soft); font-size: var(--nx-fs-body); line-height: var(--nx-lh-body); text-wrap: pretty; }
+.nx-platform-foundation__diagram { display: block; width: 100%; max-width: 420px; height: auto; margin-inline: auto; }
+.nx-platform-foundation__points { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.nx-platform-foundation__points li { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; }
+.nx-platform-foundation__points li + li { border-top: 1px solid var(--nx-line); }
+.nx-platform-foundation__points li:first-child { padding-top: 0; }
+.nx-platform-foundation__points li:last-child { padding-bottom: 0; }
+.nx-platform-foundation__points svg { flex-shrink: 0; width: 26px; height: 26px; color: var(--nx-blue); }
+.nx-platform-foundation__points h3 { margin: 0 0 4px; color: var(--nx-navy); font-family: var(--nx-font-body); font-size: var(--nx-fs-small); font-weight: 600; line-height: 1.4; }
+.nx-platform-foundation__points p { margin: 0; color: var(--nx-ink-soft); font-size: 0.8125rem; line-height: 1.6; text-wrap: pretty; }
+@media (max-width: 991px) {
+  .nx-platform-foundation__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+  .nx-platform-foundation h2 { font-size: 1.75rem; }
+}
+@media (max-width: 600px) {
+  .nx-platform-foundation__grid { grid-template-columns: minmax(0, 1fr); }
+  .nx-platform-foundation__content { grid-column: auto; }
+  .nx-platform-foundation__diagram { max-width: 340px; margin-inline: auto; }
+}
+
+
