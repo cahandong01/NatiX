@@ -1,15 +1,20 @@
-import Button from "../components/Button";
-import PageHero from "../components/PageHero";
-import { DEMO_LINK } from "../site";
+import SolusiHero from "../components/SolusiHero";
+import SolusiSchool from "../components/SolusiSchool";
+import SolusiBoarding from "../components/SolusiBoarding";
+import SolusiFoundation from "../components/SolusiFoundation";
+import SolusiClosing from "../components/SolusiClosing";
 
 export default function Solusi() {
   return (
-    <PageHero
-      eyebrow="Solusi"
-      title={<>Sesuai cara kerja <span class="nx-accent">lembaga Anda</span></>}
-      lead="Sekolah, pesantren dan boarding, atau yayasan dengan banyak lembaga: setiap jalur memakai bahasa lapangannya sendiri."
-    >
-      <Button href={DEMO_LINK}>Minta Demo</Button>
-    </PageHero>
+    <>
+      <SolusiHero />
+      <SolusiSchool />
+      <SolusiBoarding />
+      <SolusiFoundation />
+      <SolusiClosing />
+    </>
   );
 }
+
+
+

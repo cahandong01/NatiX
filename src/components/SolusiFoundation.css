@@ -1,0 +1,215 @@
+.nx-solusi-foundation {
+  padding-block: 60px;
+  background:
+    radial-gradient(ellipse at 48% 65%, color-mix(in srgb, var(--nx-blue) 6%, transparent), transparent 65%),
+    linear-gradient(180deg, var(--nx-bg), var(--nx-tint));
+}
+.nx-solusi-foundation__grid {
+  --nx-gutter: clamp(20px, 3vw, 40px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px 48px;
+}
+.nx-solusi-foundation__grid > * { min-width: 0; }
+.nx-solusi-foundation__panel {
+  align-self: stretch;
+  padding: clamp(20px, 2.4vw, 32px);
+  border: 1px solid transparent;
+  border-radius: var(--nx-r-lg);
+  background:
+    linear-gradient(145deg, var(--nx-bg), color-mix(in srgb, var(--nx-tint) 55%, var(--nx-bg))) padding-box,
+    linear-gradient(135deg, var(--nx-bg), color-mix(in srgb, var(--nx-blue) 25%, var(--nx-line)) 55%, var(--nx-bg)) border-box;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 95%), 0 2px 4px rgb(11 31 58 / 4%), 0 16px 36px rgb(0 86 179 / 8%);
+}
+.nx-solusi-foundation__heading {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+.nx-solusi-foundation__visual { display: grid; align-content: center; }
+.nx-solusi-foundation__content { display: flex; align-items: center; min-width: 0; }
+.nx-solusi-foundation__diagram { width: 100%; }
+.nx-solusi-foundation__eyebrow {
+  margin: 0 0 8px;
+  color: var(--nx-blue);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.nx-solusi-foundation h2 {
+  margin: 0 0 16px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: var(--nx-lh-heading);
+  text-wrap: balance;
+}
+
+.nx-solusi-foundation h2 span { color: var(--nx-blue); }
+.nx-solusi-foundation__lead {
+  max-width: 72ch;
+  margin: 0 auto;
+  color: var(--nx-ink-soft);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+  text-wrap: pretty;
+}
+
+.nx-solusi-foundation__root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: min(100%, 248px);
+  margin: 0 auto 44px;
+  padding: 12px 24px;
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 16%, var(--nx-bg));
+  border-radius: 999px;
+  background: linear-gradient(145deg, var(--nx-bg), var(--nx-tint));
+  box-shadow: var(--nx-shadow-1);
+}
+
+.nx-solusi-foundation__root img { display: block; width: 148px; height: 40px; object-fit: contain; }
+.nx-solusi-foundation__root p {
+  margin: 0;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.nx-solusi-foundation__root::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 22px;
+  border-left: 2px solid var(--nx-blue-accent);
+  transform: translateX(-50%);
+}
+
+.nx-solusi-foundation__institutions {
+  --institution-gap: 12px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--institution-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-solusi-foundation__institutions::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  right: calc((100% - var(--institution-gap) * 3) / 8);
+  left: calc((100% - var(--institution-gap) * 3) / 8);
+  border-top: 2px solid var(--nx-blue-accent);
+}
+
+.nx-solusi-foundation__institution {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 18px 8px;
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 12%, var(--nx-bg));
+  border-radius: var(--nx-r-lg);
+  background: linear-gradient(145deg, var(--nx-bg), color-mix(in srgb, var(--nx-tint) 65%, var(--nx-bg)));
+  box-shadow: var(--nx-shadow-1);
+  text-align: center;
+}
+
+.nx-solusi-foundation__institution::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  height: 22px;
+  border-left: 2px solid var(--nx-blue-accent);
+  transform: translateX(-50%);
+}
+
+.nx-solusi-foundation__institution::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nx-blue-accent);
+  transform: translateX(-50%);
+}
+
+.nx-solusi-foundation__institution svg { width: 36px; height: 36px; margin-bottom: 8px; color: var(--nx-blue); }
+.nx-solusi-foundation__institution h3 {
+  margin: 0 0 4px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.nx-solusi-foundation__institution p { margin: 0; color: var(--nx-ink-soft); font-family: var(--nx-font-body); font-size: 0.75rem; line-height: 1.5; }
+
+.nx-solusi-foundation__points {
+  display: grid;
+  width: 100%;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nx-solusi-foundation__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-body);
+  font-weight: 500;
+  line-height: var(--nx-lh-body);
+}
+
+.nx-solusi-foundation__points svg { flex-shrink: 0; width: 20px; height: 20px; margin-top: 3px; color: var(--nx-blue); }
+
+/* Transisi Reveal mengikuti Platform. */
+.nx-solusi-foundation .reveal-hidden {
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: auto;
+}
+.nx-solusi-foundation .reveal-visible { opacity: 1; transform: none; }
+
+@media (max-width: 991px) {
+  .nx-solusi-foundation__grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .nx-solusi-foundation h2 { font-size: 1.75rem; }
+  .nx-solusi-foundation__diagram { max-width: 680px; margin-inline: auto; }
+}
+
+@media (max-width: 600px) {
+  .nx-solusi-foundation__institutions { --institution-gap: 8px; }
+  .nx-solusi-foundation__institution { padding: 14px 4px; border-radius: var(--nx-r-md); }
+  .nx-solusi-foundation__institution svg { width: 28px; height: 28px; }
+  .nx-solusi-foundation__institution h3 { font-size: 0.75rem; }
+  .nx-solusi-foundation__institution p { font-size: 0.6875rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-solusi-foundation .reveal-hidden,
+  .nx-solusi-foundation .reveal-visible { opacity: 1; transform: none; transition: none; }
+}
