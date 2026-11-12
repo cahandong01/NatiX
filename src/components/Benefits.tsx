@@ -59,6 +59,7 @@ export default function Benefits() {
           {/* Kiri — heading */}
           <Reveal>
             <div class="benefits-left">           
+              <p class="benefits-eyebrow">MANFAAT BAGI LEMBAGA</p>
               <h2 class="benefits-title">
                 Lebih dari Sekadar{" "}
                 <span class="benefits-title-accent">Platform</span>
@@ -68,6 +69,10 @@ export default function Benefits() {
                 lembaga pendidikan yang membantu Anda bekerja lebih cerdas,
                 transparan, dan siap berkembang.
               </p>
+              <div class="benefits-ecosystem">
+                <h3>Pendidikan dan Unit Pendukung, Satu Ekosistem</h3>
+                <p>NatiX mencakup pengelolaan pendidikan sekaligus unit usaha dan layanan pendukung, seperti koperasi, transportasi, asrama, dapur, dan perpustakaan. Tata kelola yayasan menjangkau seluruh kegiatan lembaga, bukan hanya administrasi akademik.</p>
+              </div>
               <div class="benefits-tagline-box">
                 <span class="benefits-tagline-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">

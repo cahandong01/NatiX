@@ -8,12 +8,14 @@ export const SITE = {
   demoUrl: "https://demo.natix.id",
   /** Aktifkan setelah domain HFP System siap: menampilkan label "produk HFP System" di footer. */
   showHfpLabel: false,
-  /** Tautan kosong tidak ditampilkan. Isi setelah akun benar-benar aktif. */
+  /** Isi href dengan URL akun resmi. URL kosong tampil sebagai ikon nonaktif. */
   socials: [
-    { label: "YouTube", href: "" },
-    { label: "Instagram", href: "" },
-    { label: "TikTok", href: "" },
+    { label: "LinkedIn", href: "" },
     { label: "X", href: "" },
+    { label: "Facebook", href: "" },
+    { label: "Instagram", href: "" },
+    { label: "YouTube", href: "" },
+    { label: "TikTok", href: "" },
   ],
 };
 

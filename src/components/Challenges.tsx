@@ -1,23 +1,17 @@
 import Reveal from "./Reveal";
+import Picture from "./Picture";
 
 export default function Challenges() {
   return (
-    <section class="challenges-section">
-      <div class="challenges-bg-wrapper">
-        <img
-          src="/assets/svg/background_cityscape_more_buildings.svg"
-          alt="Cityscape Background"
-          class="challenges-bg-img"
-        />
-      </div>
-      <div class="challenges-gradient-overlay"></div>
+    <section class="challenges-section" aria-labelledby="challenges-title">
 
       <div class="container challenges-container">
         <Reveal>
           <div class="section-header text-center">
-            <h2 class="challenges-title">Tantangan Digitalisasi Sekolah dan Lembaga Pendidikan</h2>
+            <p class="challenges-eyebrow">TANTANGAN PENGELOLAAN</p>
+            <h2 id="challenges-title" class="challenges-title">Empat Hambatan yang Membuat Lembaga Pendidikan <span>Sulit Berkembang</span></h2>
             <p class="challenges-subtitle">
-              Banyak sekolah dan lembaga pendidikan masih menghadapi proses administrasi manual, data yang tersebar, dan monitoring operasional yang belum terintegrasi secara real-time.
+              Catatan manual, data yang tersebar, dan laporan yang terlambat membuat pimpinan memutuskan tanpa gambaran yang utuh.
             </p>
           </div>
         </Reveal>
@@ -54,24 +48,20 @@ export default function Challenges() {
 
           <Reveal delay={400}>
             <div class="challenges-dashboard-preview">
-              <img
-                src="/assets/section2_dashboard.png"
-                alt="Dashboard sistem ERP sekolah dan monitoring siswa"
+              <Picture
+                name="gbrdashboard2"
+                alt="Ilustrasi dashboard NatiX pada laptop dan perkembangan anak pada ponsel wali"
+                width={612}
+                height={408}
+                widths={[480, 612]}
+                sizes="(max-width: 632px) calc(100vw - 20px), 612px"
                 class="dashboard-img-actual"
               />
             </div>
           </Reveal>
         </div>
 
-        <Reveal delay={600}>
-          <div class="challenges-footer text-center">
-            <p class="challenges-closing-text">
-              Akibatnya, pengelolaan menjadi tidak efisien dan sulit dikembangkan.
-            </p>
-          </div>
-        </Reveal>
       </div>
-      <div class="challenges-wave-silhouette"></div>
     </section>
   );
 }

@@ -1,0 +1,53 @@
+.nx-challenges-comparison .card-illustration {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--nx-tint);
+  color: var(--nx-blue);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.nx-challenges-comparison .card-illustration svg {
+  width: 26px;
+  height: 26px;
+}
+
+.nx-challenges-comparison .challenge-card {
+  border-color: var(--nx-line);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.nx-challenges-comparison .challenge-card h3 {
+  color: var(--nx-navy);
+  font-family: var(--nx-font-body);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.nx-challenges-comparison .challenge-card:hover {
+  transform: none;
+  box-shadow: var(--shadow-soft);
+  border-color: var(--nx-line);
+}
+
+@media (hover: hover) {
+  .nx-challenges-comparison .challenge-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--nx-blue);
+  }
+
+  .nx-challenges-comparison .challenge-card:hover .card-illustration {
+    background: var(--nx-blue);
+    color: var(--nx-bg);
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-challenges-comparison .reveal-hidden { opacity: 1; transform: none; transition: none; }
+  .nx-challenges-comparison .challenge-card, .nx-challenges-comparison .card-illustration { transition: none; }
+  .nx-challenges-comparison .challenge-card:hover, .nx-challenges-comparison .challenge-card:hover .card-illustration { transform: none; }
+}

@@ -1,0 +1,115 @@
+
+.nx-executive {
+  padding-block: 60px;
+  background: linear-gradient(to bottom, var(--nx-tint), var(--nx-bg) 48px);
+}
+
+.nx-executive__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-areas: "visual content";
+  gap: 48px;
+  align-items: center;
+}
+
+.nx-executive__visual {
+  grid-area: visual;
+  min-width: 0;
+}
+
+.nx-executive__visual figure {
+  margin: 0;
+}
+
+.nx-executive__visual picture {
+  display: block;
+}
+
+.nx-executive__image {
+  display: block;
+  width: 100%;
+  max-width: 612px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.nx-executive__content {
+  grid-area: content;
+  min-width: 0;
+}
+
+.nx-executive__eyebrow {
+  margin: 0 0 8px;
+  color: var(--nx-blue);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nx-executive h2 {
+  margin: 0 0 16px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  line-height: var(--nx-lh-heading);
+  text-wrap: balance;
+}
+
+.nx-executive h2 span {
+  color: var(--nx-blue);
+}
+
+.nx-executive__lead {
+  margin: 0 0 24px;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+}
+
+.nx-executive__points {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-executive__points li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--nx-ink);
+  font-size: var(--nx-fs-small);
+  line-height: var(--nx-lh-body);
+}
+
+.nx-executive__points svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: var(--nx-blue);
+}
+
+@media (max-width: 991px) {
+  .nx-executive__grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "content" "visual";
+    gap: 32px;
+    padding-inline: 20px;
+  }
+
+  .nx-executive h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-executive .reveal-hidden {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,159 @@
+.nx-solutions-preview {
+  padding-block: 60px;
+  background: linear-gradient(to bottom, var(--nx-tint), var(--nx-bg) 48px, var(--nx-bg) calc(100% - 48px), var(--nx-tint));
+}
+
+.nx-solutions-preview__heading {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.nx-solutions-preview__eyebrow {
+  margin: 0 0 8px;
+  color: var(--nx-blue);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.nx-solutions-preview h2 {
+  margin: 0 0 16px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  line-height: var(--nx-lh-heading);
+  text-wrap: balance;
+}
+
+.nx-solutions-preview h2 span { color: var(--nx-blue); }
+
+.nx-solutions-preview__intro {
+  max-width: 68ch;
+  margin: 0 auto;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+}
+
+.nx-solutions-preview__columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-solutions-preview__columns > li { min-width: 0; padding-inline: 28px; }
+.nx-solutions-preview__columns > li:first-child { padding-left: 0; }
+.nx-solutions-preview__columns > li:last-child { padding-right: 0; }
+.nx-solutions-preview__columns > li + li { border-left: 1px solid var(--nx-line); }
+
+.nx-solutions-preview__context { display: flex; flex-direction: column; height: 100%; }
+
+.nx-solutions-preview__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  margin-bottom: 20px;
+}
+
+.nx-solutions-preview__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--nx-tint);
+  color: var(--nx-blue);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.nx-solutions-preview__icon svg { width: 26px; height: 26px; }
+
+.nx-solutions-preview h3 {
+  margin: 0;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.nx-solutions-preview__description {
+  margin: 0 0 20px;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+}
+
+.nx-solutions-preview__scope {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-solutions-preview__scope li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--nx-ink);
+  font-size: var(--nx-fs-small);
+  line-height: var(--nx-lh-body);
+}
+
+.nx-solutions-preview__scope svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: var(--nx-blue);
+}
+
+.nx-solutions-preview__link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 10px;
+  min-height: 44px;
+  margin-top: auto;
+  color: var(--nx-blue);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+}
+
+.nx-solutions-preview__link svg { flex-shrink: 0; width: 20px; height: 20px; transition: transform 0.3s ease; }
+.nx-solutions-preview__link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+@media (hover: hover) {
+  .nx-solutions-preview__context:hover .nx-solutions-preview__icon {
+    background: var(--nx-blue);
+    color: var(--nx-bg);
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .nx-solutions-preview__link:hover svg { transform: translateX(3px); }
+}
+
+@media (max-width: 991px) {
+  .nx-solutions-preview > .container { padding-inline: 20px; }
+  .nx-solutions-preview h2 { font-size: 1.75rem; }
+  .nx-solutions-preview__columns { grid-template-columns: minmax(0, 1fr); }
+  .nx-solutions-preview__columns > li { padding: 24px 0; }
+  .nx-solutions-preview__columns > li:first-child { padding-top: 0; }
+  .nx-solutions-preview__columns > li:last-child { padding-bottom: 0; }
+  .nx-solutions-preview__columns > li + li { border-left: 0; border-top: 1px solid var(--nx-line); }
+  .nx-solutions-preview__title { margin-bottom: 16px; }
+  .nx-solutions-preview__scope { margin-bottom: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-solutions-preview .reveal-hidden { opacity: 1; transform: none; transition: none; }
+  .nx-solutions-preview__icon, .nx-solutions-preview__link svg { transition: none; }
+  .nx-solutions-preview__context:hover .nx-solutions-preview__icon, .nx-solutions-preview__link:hover svg { transform: none; }
+}

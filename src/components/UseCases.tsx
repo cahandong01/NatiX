@@ -2,19 +2,17 @@ import Reveal from "./Reveal";
 
 export default function UseCases() {
   return (
-    <section class="use-cases-section">
-      <div class="use-cases-bg-wrapper">
-        <img src="/assets/svg/futuristic_campus_soft.svg" alt="Futuristic Campus" class="use-cases-bg-img" />
-      </div>
+    <section class="use-cases-section" aria-labelledby="use-cases-title">
       
       <div class="container">
         <Reveal>
           <div class="section-header text-center">
-            <h2 class="use-cases-title">
-              Platform Digital Terintegrasi untuk Berbagai Lembaga Pendidikan
+            <p class="use-cases-eyebrow">Solusi Pengelolaan Lembaga Pendidikan</p>
+            <h2 id="use-cases-title" class="use-cases-title">
+              Solusi Terpadu untuk <span>Seluruh Lembaga</span>
             </h2>
             <p class="use-cases-subtitle">
-              NatiX menghadirkan ekosistem ERP terintegrasi untuk sekolah dan institusi pendidikan — mulai dari administrasi akademik, pembayaran digital, broadcast informasi, hingga monitoring orang tua dan operasional multi unit.
+              Satu platform yang fleksibel untuk berbagai jenis lembaga pendidikan dalam satu yayasan.
             </p>
           </div>
         </Reveal>
@@ -71,13 +69,7 @@ export default function UseCases() {
           </Reveal>
         </div>
 
-        <Reveal delay={600}>
-          <p class="use-cases-closing">
-            Tanpa kompleksitas berlebih. Tanpa sistem yang terpisah-pisah.
-          </p>
-        </Reveal>
       </div>
-      <div class="use-cases-wave-silhouette"></div>
     </section>
   );
 }

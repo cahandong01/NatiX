@@ -1,0 +1,298 @@
+.nx-home {
+  --nx-home-gutter: clamp(20px, 3vw, 40px);
+  --nx-home-section-space: 60px;
+  --nx-home-transition: 48px;
+  --nx-home-depth-flow: color-mix(in srgb, var(--nx-blue) 17%, var(--nx-bg));
+  --nx-home-depth-context: color-mix(in srgb, var(--nx-blue) 10%, var(--nx-bg));
+  --nx-home-depth-solutions: color-mix(in srgb, var(--nx-blue) 23%, var(--nx-bg));
+  --nx-home-depth-family: color-mix(in srgb, var(--nx-blue) 19%, var(--nx-bg));
+  --nx-home-depth-benefits: color-mix(in srgb, var(--nx-blue) 12%, var(--nx-bg));
+  --nx-home-depth-start: color-mix(in srgb, var(--nx-blue) 20%, var(--nx-bg));
+  background: var(--nx-bg);
+}
+
+.nx-home .container,
+.nx-home .nx-container {
+  width: 100%;
+  max-width: calc(var(--nx-container) + var(--nx-home-gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--nx-home-gutter);
+}
+
+.nx-home > section:not(.hero-section) {
+  padding-block: var(--nx-home-section-space);
+  border-top: 1px solid color-mix(in srgb, var(--nx-blue) 18%, transparent);
+}
+
+.nx-home .hero-section {
+  padding-block: clamp(40px, 5vw, 72px);
+}
+
+.nx-home .hero-content { padding: 0; }
+.nx-home .hero-grid > * { min-width: 0; }
+.nx-home .hero-buttons { flex-wrap: wrap; }
+.nx-home .hero-subtitle { max-width: 56ch; color: var(--nx-ink-soft); line-height: var(--nx-lh-body); }
+.nx-home .hero-highlights li { min-height: 38px; padding: 8px; gap: 6px; font-size: 0.75rem; }
+
+.nx-home .hero-wave-silhouette {
+  z-index: 2;
+}
+
+.nx-home .hero-wave-silhouette::after {
+  height: var(--nx-home-transition);
+  background: linear-gradient(to bottom, transparent, var(--nx-home-depth-flow));
+}
+
+.nx-home .nx-value-chain {
+  background:
+    radial-gradient(ellipse at 50% 35%, rgb(255 255 255 / 40%), transparent 72%),
+    var(--nx-home-depth-flow);
+}
+
+.nx-home .challenges-section {
+  background:
+    linear-gradient(to bottom, var(--nx-home-depth-flow), transparent var(--nx-home-transition)),
+    radial-gradient(ellipse at 85% 70%, color-mix(in srgb, var(--nx-blue-accent) 10%, transparent), transparent 65%),
+    var(--nx-home-depth-context);
+}
+
+.nx-home .nx-solutions-preview {
+  background:
+    linear-gradient(to bottom, var(--nx-home-depth-context), transparent var(--nx-home-transition)),
+    radial-gradient(ellipse at 50% 15%, rgb(255 255 255 / 35%), transparent 72%),
+    var(--nx-home-depth-solutions);
+}
+
+.nx-home .nx-executive {
+  position: relative;
+  isolation: isolate;
+  border-top-color: color-mix(in srgb, var(--nx-blue-accent) 60%, var(--nx-navy));
+  background:
+    radial-gradient(ellipse at 20% 45%, color-mix(in srgb, var(--nx-blue) 55%, transparent), transparent 65%),
+    linear-gradient(120deg, var(--nx-navy-soft), var(--nx-navy) 75%);
+}
+
+.nx-home .nx-family-teaser {
+  border-top-color: color-mix(in srgb, var(--nx-blue) 25%, transparent);
+  background:
+    radial-gradient(ellipse at 80% 45%, rgb(255 255 255 / 42%), transparent 62%),
+    var(--nx-home-depth-family);
+}
+
+.nx-home .benefits-section {
+  background:
+    linear-gradient(to bottom, var(--nx-home-depth-family), transparent var(--nx-home-transition)),
+    var(--nx-home-depth-benefits);
+}
+
+.nx-home .benefits-bg-left,
+.nx-home .benefits-bg-right {
+  opacity: 0.12;
+}
+
+.nx-home .benefits-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--nx-home-depth-family), transparent var(--nx-home-transition), transparent calc(100% - var(--nx-home-transition)), var(--nx-home-depth-benefits));
+}
+
+.nx-home .benefits-wave-silhouette::after {
+  height: var(--nx-home-transition);
+  background: linear-gradient(to bottom, transparent, var(--nx-home-depth-benefits));
+}
+
+.nx-home .nx-start {
+  background:
+    linear-gradient(to bottom, var(--nx-home-depth-benefits), transparent var(--nx-home-transition)),
+    radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--nx-blue-accent) 9%, transparent), transparent 70%),
+    var(--nx-home-depth-start);
+}
+
+.nx-home .nx-home-closing {
+  border-top-color: color-mix(in srgb, var(--nx-blue-accent) 65%, var(--nx-blue));
+  background:
+    radial-gradient(ellipse at 85% 0%, color-mix(in srgb, var(--nx-blue-accent) 55%, transparent), transparent 65%),
+    linear-gradient(120deg, var(--nx-blue-strong), var(--nx-blue));
+}
+
+.nx-home :is(.nx-value-chain__heading h2, .challenges-title, .nx-solutions-preview h2, .nx-executive h2, .nx-family-teaser h2, .benefits-title, .nx-start h2, .nx-home-closing h2) {
+  margin-bottom: 16px;
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: var(--nx-lh-heading);
+  text-wrap: balance;
+}
+
+.nx-home :is(.hero-eyebrow, .challenges-eyebrow, .nx-solutions-preview__eyebrow, .nx-executive__eyebrow, .nx-family-teaser__eyebrow),
+.nx-home .benefits-eyebrow,
+.nx-home .nx-start__heading .nx-start__eyebrow,
+.nx-home .nx-value-chain__heading .nx-eyebrow {
+  margin: 0 0 8px;
+  color: var(--nx-blue);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.nx-home .nx-value-chain__heading .nx-eyebrow::before { display: none; }
+
+.nx-home :is(.challenges-subtitle, .nx-solutions-preview__intro, .nx-executive__lead, .nx-family-teaser__lead, .benefits-subtitle, .nx-start__heading p) {
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+  text-wrap: pretty;
+}
+
+.nx-home .nx-value-chain__heading > p:not(.nx-eyebrow) {
+  max-width: 68ch;
+  margin: 0 auto;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+  text-wrap: pretty;
+}
+
+.nx-home .nx-value-chain__heading { margin-bottom: 60px; }
+.nx-home .nx-solutions-preview__heading { margin-bottom: 40px; }
+.nx-home .challenges-subtitle { max-width: 68ch; margin-bottom: 32px; }
+.nx-home .nx-executive__lead,
+.nx-home .nx-family-teaser__lead { max-width: 56ch; }
+.nx-home .benefits-subtitle { max-width: 48ch; }
+.nx-home .benefits-left { padding-top: 0; }
+
+.nx-home .benefits-subtitle { margin-bottom: 24px; }
+
+.nx-home .benefits-ecosystem { margin-bottom: 24px; }
+
+.nx-home .benefits-ecosystem h3 {
+  margin: 0 0 10px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.nx-home .benefits-ecosystem p {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+  text-wrap: pretty;
+}
+
+.nx-home .nx-value-chain__card,
+.nx-home .nx-challenges-comparison .challenge-card,
+.nx-home .benefit-card,
+.nx-home .nx-start__card {
+  box-shadow: var(--nx-shadow-1);
+  transition: transform var(--nx-dur-base) var(--nx-ease-out), box-shadow var(--nx-dur-base) var(--nx-ease-out), border-color var(--nx-dur-base) var(--nx-ease-out);
+}
+
+.nx-home .nx-challenges-comparison .challenge-card {
+  background: var(--nx-bg);
+  border-color: var(--nx-line);
+}
+
+.nx-home .benefit-card,
+.nx-home .nx-start__card {
+  border-color: var(--nx-line);
+  border-left-color: var(--nx-blue);
+}
+
+.nx-home .benefit-card-body { min-width: 0; }
+.nx-home .benefit-card-title { text-wrap: pretty; }
+.nx-home .nx-executive h2 { color: var(--nx-bg); }
+.nx-home .nx-executive h2 span { color: color-mix(in srgb, var(--nx-tint) 80%, var(--nx-blue-accent)); }
+.nx-home .nx-executive .nx-executive__eyebrow { color: color-mix(in srgb, var(--nx-tint) 75%, var(--nx-blue-accent)); }
+.nx-home .nx-executive .nx-executive__lead { color: var(--nx-tint); }
+.nx-home .nx-executive__points li { color: var(--nx-tint); }
+.nx-home .nx-executive__points svg { color: color-mix(in srgb, var(--nx-tint) 75%, var(--nx-blue-accent)); }
+.nx-home .nx-executive__image { filter: drop-shadow(0 22px 30px rgb(0 10 30 / 35%)); }
+.nx-home .nx-executive .nx-btn {
+  background: var(--nx-bg);
+  border-color: var(--nx-bg);
+  color: var(--nx-navy);
+  box-shadow: 0 6px 20px rgb(0 10 30 / 18%);
+}
+.nx-home .nx-executive .nx-btn:hover { background: var(--nx-tint); border-color: var(--nx-tint); }
+
+.nx-home .nx-solutions-preview__columns > li + li { border-color: color-mix(in srgb, var(--nx-blue) 20%, transparent); }
+.nx-home .nx-solutions-preview__icon { background: color-mix(in srgb, var(--nx-bg) 65%, var(--nx-home-depth-solutions)); }
+@media (hover: hover) {
+  .nx-home .nx-solutions-preview__context:hover .nx-solutions-preview__icon { background: var(--nx-blue); }
+}
+.nx-home .nx-value-chain__card { background: linear-gradient(150deg, var(--nx-bg), color-mix(in srgb, var(--nx-tint) 60%, var(--nx-bg))); }
+
+.nx-home .nx-home-closing__panel {
+  padding-block: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.nx-home .nx-home-closing__panel::after { display: none; }
+.nx-home .nx-home-closing__action { border-left-color: rgb(255 255 255 / 35%); }
+
+.nx-home :is(.hero-title, .challenges-title, .benefits-title):hover { text-shadow: none; }
+
+.nx-home .reveal-hidden {
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: auto;
+}
+
+.nx-home .reveal-visible { opacity: 1; transform: none; }
+
+@media (hover: hover) {
+  .nx-home .nx-challenges-comparison .challenge-card:hover,
+  .nx-home .benefit-card:hover,
+  .nx-home .nx-start__card:hover {
+    border-color: var(--nx-blue);
+    box-shadow: var(--nx-shadow-2);
+    transform: translateY(-4px);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nx-home .hero-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 991px) {
+  .nx-home .hero-section { padding-block: 40px; }
+  .nx-home .hero-subtitle { margin-inline: auto; }
+  .nx-home :is(.nx-value-chain__heading h2, .challenges-title, .nx-solutions-preview h2, .nx-executive h2, .nx-family-teaser h2, .benefits-title, .nx-start h2, .nx-home-closing h2) { font-size: 1.75rem; }
+  .nx-home .nx-value-chain__heading { margin-bottom: 40px; }
+  .nx-home .nx-solutions-preview__heading { margin-bottom: 32px; }
+}
+
+@media (max-width: 600px) {
+  .nx-home .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.04em; }
+  .nx-home .hero-highlights { gap: 8px; }
+  .nx-home .benefit-card { gap: 12px; padding: 18px 16px; }
+  .nx-home .benefit-card-icon { display: flex; width: 32px; height: 32px; }
+  .nx-home .benefit-card-icon svg { width: 22px; height: 22px; }
+  .nx-home .benefit-card-number { width: 32px; height: 32px; font-size: 0.75rem; }
+}
+
+@media (hover: none) {
+  .nx-home .benefit-card:hover { transform: none; box-shadow: var(--nx-shadow-1); }
+  .nx-home .benefit-card:hover .benefit-card-icon { transform: none; background: var(--nx-tint); color: var(--nx-blue); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-home .reveal-hidden,
+  .nx-home .reveal-visible { opacity: 1; transform: none; transition: none; }
+  .nx-home .hero-bg-img { transform: scale(1.1) !important; }
+  .nx-home .nx-challenges-comparison .challenge-card:hover,
+  .nx-home .benefit-card:hover,
+  .nx-home .benefit-card:hover .benefit-card-icon,
+  .nx-home .nx-start__card:hover { transform: none; }
+}

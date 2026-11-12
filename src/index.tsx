@@ -12,5 +12,5 @@ import AppRouter from "./AppRouter";
 const root = document.getElementById("root")!;
 
 // Build produksi: HTML sudah dirender per rute, cukup dihidupkan. Mode dev: render biasa.
-if (root.hasChildNodes()) hydrate(() => <AppRouter />, root);
+if (root.children.length > 0) hydrate(() => <AppRouter />, root);
 else render(() => <AppRouter />, root);
