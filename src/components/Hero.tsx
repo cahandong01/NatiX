@@ -44,7 +44,7 @@ export default function Hero() {
         <div class="hero-grid">
           <Reveal>
             <div class="hero-content">
-              <p class="hero-eyebrow">PLATFORM ERP PENDIDIKAN ENTERPRISE</p>
+              <p class="hero-eyebrow">PLATFORM ERP ENTERPRISE</p>
               <h1 class="hero-title">Satu Sistem, <span class="hero-title-accent">Semua Tertata</span></h1>
               <p class="hero-subtitle">
                 NatiX adalah platform ERP Enterprise yang menghubungkan seluruh modul pengelolaan pendidikan dalam satu ekosistem.

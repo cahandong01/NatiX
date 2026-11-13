@@ -1,6 +1,6 @@
 .nx-home {
   --nx-home-gutter: clamp(20px, 3vw, 40px);
-  --nx-home-section-space: 60px;
+  --nx-home-section-space: 40px;
   --nx-home-transition: 48px;
   --nx-home-depth-flow: color-mix(in srgb, var(--nx-blue) 17%, var(--nx-bg));
   --nx-home-depth-chain-end: color-mix(in srgb, var(--nx-blue) 5%, var(--nx-bg));
@@ -26,7 +26,7 @@
 }
 
 .nx-home .hero-section {
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   background:
     radial-gradient(ellipse at 85% 20%, color-mix(in srgb, var(--nx-blue-accent) 8%, transparent), transparent 65%),
     linear-gradient(to bottom, var(--nx-bg), var(--nx-home-depth-flow));
@@ -54,7 +54,7 @@
 
 /* Satu aliran vertikal: warna akhir hero, bidang jernih, lalu sambungan berikutnya. */
 .nx-home > section.nx-value-chain {
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   border-top: 0;
   background: linear-gradient(
     to bottom,
@@ -67,7 +67,7 @@
 }
 
 .nx-home > section.challenges-section {
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   border-top: 0;
   background: linear-gradient(
     to bottom,
@@ -79,7 +79,7 @@
 }
 
 .nx-home > section.nx-solutions-preview {
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   border-top: 0;
   background: linear-gradient(
     to bottom,
@@ -93,7 +93,7 @@
 .nx-home > section.nx-executive {
   position: relative;
   isolation: isolate;
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   border-top: 0;
   background:
     linear-gradient(to top, var(--nx-navy), transparent clamp(24px, 3vw, 48px)),
@@ -103,7 +103,7 @@
 }
 
 .nx-home > section.nx-family-teaser {
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   border-top: 0;
   background:
     linear-gradient(to bottom, var(--nx-navy), transparent clamp(24px, 3vw, 48px)),
@@ -113,7 +113,7 @@
 }
 
 .nx-home > section.benefits-section {
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   border-top: 0;
   background: linear-gradient(
     to bottom,
@@ -144,7 +144,7 @@
 }
 
 .nx-home > section.nx-start {
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   border-top: 0;
   background: linear-gradient(
     to bottom,
@@ -156,7 +156,7 @@
 }
 
 .nx-home > section.nx-home-closing {
-  padding-block: 64px;
+  padding-block: var(--nx-home-section-space);
   border-top: 0;
   background:
     linear-gradient(to bottom, var(--nx-home-depth-start), transparent clamp(24px, 3vw, 48px)),
@@ -293,8 +293,8 @@
 .nx-home :is(.hero-title, .challenges-title, .benefits-title):hover { text-shadow: none; }
 
 .nx-home .reveal-hidden {
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: none;
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   will-change: auto;
 }
 
@@ -311,7 +311,6 @@
 }
 
 @media (max-width: 991px) {
-  .nx-home .hero-section,
   .nx-home > section.nx-value-chain,
   .nx-home > section.challenges-section,
   .nx-home > section.nx-solutions-preview,
@@ -319,7 +318,8 @@
   .nx-home > section.nx-family-teaser,
   .nx-home > section.benefits-section,
   .nx-home > section.nx-start,
-  .nx-home > section.nx-home-closing { padding-block: 32px; }
+  .nx-home > section.nx-home-closing { padding-block: var(--nx-home-section-space); }
+  .nx-home { --nx-home-section-space: 20px; }
   .nx-home .nx-home-closing__panel { gap: 20px; }
   .nx-home .hero-subtitle { margin-inline: auto; }
   .nx-home :is(.nx-value-chain__heading h2, .challenges-title, .nx-solutions-preview h2, .nx-executive h2, .nx-family-teaser h2, .benefits-title, .nx-start h2, .nx-home-closing h2) { font-size: 1.75rem; }
