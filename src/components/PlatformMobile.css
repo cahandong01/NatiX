@@ -92,7 +92,8 @@
   .nx-platform-mobile__content > .nx-btn:is(:hover, :focus-visible) svg { transform: none; }
 }
 @media (max-width: 991px) {
-  .nx-platform-mobile__grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .nx-platform-mobile__grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .nx-platform-mobile__visual { width: 100%; max-width: 420px; margin-inline: auto; }
   .nx-platform-mobile__content { grid-row: 1; }
   .nx-platform-mobile h2 { font-size: 1.75rem; }
 }
@@ -102,4 +103,16 @@
   .nx-platform-mobile__benefits li { display: flex; align-items: flex-start; gap: 12px; }
   .nx-platform-mobile__benefits svg { flex-shrink: 0; width: 24px; height: 24px; margin: 0; }
   .nx-platform-mobile .nx-btn { white-space: normal; text-align: center; line-height: 1.4; }
+}
+
+/* Visual mengikuti tinggi narasi; tidak menambah tinggi baris desktop. */
+@media (min-width: 992px) {
+  .nx-platform-mobile__grid { align-items: stretch; }
+  .nx-platform-mobile__visual { position: relative; }
+  .nx-platform-mobile__visual picture { position: absolute; inset: 0; }
+  .nx-platform-mobile__image {
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+  }
 }

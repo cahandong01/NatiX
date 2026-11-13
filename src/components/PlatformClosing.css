@@ -1,20 +1,40 @@
 .nx-platform-closing {
-  padding-block: var(--nx-platform-section-space);
-  background:
-    linear-gradient(180deg, var(--nx-platform-foundation-end), transparent var(--nx-platform-section-space)),
-    linear-gradient(0deg, var(--nx-navy), transparent var(--nx-platform-section-space)),
-    radial-gradient(ellipse at 85% 15%, color-mix(in srgb, var(--nx-blue-accent) 45%, transparent), transparent 65%),
-    linear-gradient(120deg, var(--nx-blue-strong), var(--nx-blue));
+  padding-block: clamp(40px, 5vw, 72px);
+  background: linear-gradient(
+    to bottom,
+    var(--nx-platform-foundation-end) 0%,
+    color-mix(in srgb, var(--nx-blue) 4%, var(--nx-bg)) 38%,
+    color-mix(in srgb, var(--nx-blue) 10%, var(--nx-bg)) 75%,
+    var(--nx-platform-foundation-end) 100%
+  );
 }
 .nx-platform-closing > .nx-container { --nx-gutter: clamp(20px, 3vw, 40px); }
 .nx-platform-closing__layout {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--nx-r-lg);
+  background: var(--nx-blue-strong);
+  box-shadow: none;
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr);
   align-items: center;
   gap: 40px;
 }
 .nx-platform-closing__layout > * { min-width: 0; }
-.nx-platform-closing__layout > :first-child { align-self: start; }
+.nx-platform-closing__layout::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: -230px;
+  z-index: -1;
+  width: 500px;
+  height: 320px;
+  border-radius: 50%;
+  border: 40px solid rgb(255 255 255 / 8%);
+  pointer-events: none;
+}
 .nx-platform-closing h2 {
   max-width: 30ch;
   margin: 0 0 12px;
@@ -39,7 +59,7 @@
   display: flex;
   justify-content: center;
   padding-left: 32px;
-  border-left: 1px solid rgb(255 255 255 / 25%);
+  border-left: 1px solid rgb(255 255 255 / 35%);
 }
 .nx-platform-closing__action .nx-btn {
   min-height: 52px;
@@ -82,4 +102,10 @@
   .nx-platform-closing__action .nx-btn,
   .nx-platform-closing__action svg { transition: none; }
   .nx-platform-closing__action .nx-btn:hover svg { transform: none; }
+}
+
+/* Samakan ruang dua baris judul dan tiga baris narasi dengan CTA Beranda. */
+@media (min-width: 992px) {
+  .nx-platform-closing h2 { min-height: 2lh; }
+  .nx-platform-closing p { min-height: 3lh; }
 }

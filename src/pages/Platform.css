@@ -1,7 +1,29 @@
 .nx-platform {
   --nx-platform-section-space: 40px;
+  --nx-platform-content-gap: 64px;
   --nx-platform-foundation-end: color-mix(in srgb, var(--nx-blue) 16%, var(--nx-bg));
   --nx-platform-hero-end: color-mix(in srgb, var(--nx-blue-accent) 10%, var(--nx-bg));
+}
+
+/* Jarak dihitung per pertemuan section, termasuk kedua sisi padding. */
+.nx-platform > section.nx-platform-modules {
+  padding-block: var(--nx-platform-section-space);
+}
+
+.nx-platform > section.nx-platform-executive {
+  padding-block: var(--nx-platform-section-space) calc(var(--nx-platform-content-gap) / 2);
+}
+
+.nx-platform > section.nx-platform-insights {
+  padding-block: calc(var(--nx-platform-content-gap) / 2);
+}
+
+.nx-platform > section.nx-platform-mobile {
+  padding-block: calc(var(--nx-platform-content-gap) / 2);
+}
+
+.nx-platform > section.nx-platform-foundation {
+  padding-block: calc(var(--nx-platform-content-gap) / 2) var(--nx-platform-section-space);
 }
 
 /* Fade mempertahankan posisi konten terhadap batas section saat masuk. */
@@ -19,5 +41,8 @@
 }
 
 @media (max-width: 991px) {
-  .nx-platform { --nx-platform-section-space: 20px; }
+  .nx-platform {
+    --nx-platform-section-space: 20px;
+    --nx-platform-content-gap: 32px;
+  }
 }
