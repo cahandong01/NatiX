@@ -1,0 +1,25 @@
+.nx-tentang-vision { background: var(--nx-tentang-context); }
+
+.nx-tentang-vision__panel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  max-width: 1040px;
+  margin-inline: auto;
+  padding: 24px 32px;
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 12%, var(--nx-bg));
+  border-radius: var(--nx-r-lg);
+  background: linear-gradient(145deg, var(--nx-bg), var(--nx-tint));
+  box-shadow: var(--nx-shadow-1);
+}
+
+.nx-tentang-vision__heading { display: flex; align-items: center; gap: 24px; padding-right: 32px; border-right: 1px solid var(--nx-line); }
+.nx-tentang-vision__heading svg { flex-shrink: 0; width: 44px; height: 44px; color: var(--nx-blue); }
+.nx-tentang-vision__heading h2 { margin: 0; color: var(--nx-blue); }
+.nx-tentang-vision__panel > p { margin: 0; color: var(--nx-navy); font-size: var(--nx-fs-body); line-height: var(--nx-lh-body); text-wrap: pretty; }
+
+@media (max-width: 600px) {
+  .nx-tentang-vision__panel { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px; }
+  .nx-tentang-vision__heading { gap: 16px; padding: 0 0 16px; border-right: 0; border-bottom: 1px solid var(--nx-line); }
+}

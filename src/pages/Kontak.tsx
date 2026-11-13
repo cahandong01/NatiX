@@ -1,16 +1,20 @@
-import Button from "../components/Button";
-import PageHero from "../components/PageHero";
-import { DEMO_LINK, PILOT_LINK } from "../site";
+import TentangHero from "../components/TentangHero";
+import TentangVision from "../components/TentangVision";
+import TentangPhilosophy from "../components/TentangPhilosophy";
+import TentangConsultation from "../components/TentangConsultation";
+import TentangContact from "../components/TentangContact";
+import TentangClosing from "../components/TentangClosing";
+import "./Kontak.css";
 
 export default function Kontak() {
   return (
-    <PageHero
-      eyebrow="Tentang & Kontak"
-      title={<>Mari bicara tentang <span class="nx-accent">lembaga Anda</span></>}
-      lead="NatiX dibangun dari Sleman, Yogyakarta. Ceritakan kebutuhan lembaga Anda, lalu kami tunjukkan alurnya."
-    >
-      <Button href={DEMO_LINK}>Minta Demo</Button>
-      <Button href={PILOT_LINK} variant="secondary">Mulai Program Pilot</Button>
-    </PageHero>
+    <div class="nx-tentang">
+      <TentangHero />
+      <TentangVision />
+      <TentangPhilosophy />
+      <TentangConsultation />
+      <TentangContact />
+      <TentangClosing />
+    </div>
   );
 }

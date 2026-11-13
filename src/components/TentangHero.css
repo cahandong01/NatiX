@@ -1,0 +1,23 @@
+.nx-tentang-hero {
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 85% 15%, color-mix(in srgb, var(--nx-blue-accent) 10%, transparent), transparent 65%),
+    linear-gradient(155deg, var(--nx-bg), var(--nx-tentang-context));
+}
+
+.nx-tentang-hero .hero-title {
+  max-width: 1040px;
+  margin-inline: auto;
+  color: var(--nx-navy);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.nx-tentang-hero .hero-title:hover { text-shadow: none; }
+.nx-tentang-hero .hero-subtitle { max-width: 72ch; margin: 0 auto; color: var(--nx-ink-soft); line-height: var(--nx-lh-body); text-wrap: pretty; }
+.nx-tentang-hero .hero-eyebrow { letter-spacing: 0.08em; }
+
+@media (max-width: 600px) {
+  .nx-tentang-hero__break { display: none; }
+  .nx-tentang-hero .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.04em; }
+}

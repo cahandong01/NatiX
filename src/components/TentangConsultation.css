@@ -1,0 +1,75 @@
+.nx-tentang-consultation { background: var(--nx-tentang-depth); }
+
+.nx-tentang-consultation__panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 48px;
+  padding: 40px;
+  border: 1px solid color-mix(in srgb, var(--nx-blue-accent) 45%, var(--nx-navy));
+  border-radius: var(--nx-r-lg);
+  background:
+    radial-gradient(ellipse at 100% 100%, color-mix(in srgb, var(--nx-blue-accent) 65%, transparent), transparent 70%),
+    linear-gradient(120deg, var(--nx-navy), var(--nx-blue));
+  box-shadow: var(--nx-shadow-2);
+}
+
+.nx-tentang-consultation__panel > * { min-width: 0; }
+.nx-tentang .nx-tentang-consultation .nx-tentang-eyebrow { color: var(--nx-tint); }
+.nx-tentang .nx-tentang-consultation h2 { color: var(--nx-bg); }
+.nx-tentang .nx-tentang-consultation h2 span { color: color-mix(in srgb, var(--nx-tint) 80%, var(--nx-blue-accent)); }
+.nx-tentang-consultation__lead { max-width: 48ch; margin: 0 0 24px; color: var(--nx-tint); font-size: var(--nx-fs-body); line-height: var(--nx-lh-body); text-wrap: pretty; }
+.nx-tentang-consultation__benefits { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.nx-tentang-consultation__benefits li { display: flex; align-items: flex-start; gap: 12px; color: var(--nx-bg); font-size: var(--nx-fs-body); line-height: var(--nx-lh-body); }
+.nx-tentang-consultation__benefits svg { flex-shrink: 0; width: 22px; height: 22px; margin-top: 2px; color: var(--nx-tint); }
+
+.nx-tentang-consultation__form { padding: 32px; border: 1px solid var(--nx-line); border-radius: var(--nx-r-lg); background: var(--nx-bg); box-shadow: var(--nx-shadow-2); }
+.nx-tentang-consultation__form h3 { margin: 0 0 8px; color: var(--nx-navy); font-size: var(--nx-fs-lead); line-height: var(--nx-lh-heading); }
+.nx-tentang-consultation__intro { margin: 0 0 24px; color: var(--nx-ink-soft); font-size: var(--nx-fs-small); line-height: var(--nx-lh-body); }
+.nx-tentang-consultation__fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 24px; }
+.nx-tentang-consultation__field { display: flex; flex-direction: column; min-width: 0; gap: 6px; }
+.nx-tentang-consultation__field--wide { grid-column: 1 / -1; }
+.nx-tentang-consultation__field label { color: var(--nx-navy); font-size: var(--nx-fs-small); font-weight: 500; line-height: 1.4; }
+
+.nx-tentang-consultation__field :is(input, select, textarea) {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 20%, var(--nx-line));
+  border-radius: var(--nx-r-md);
+  background: var(--nx-bg-soft);
+  color: var(--nx-ink);
+  font: inherit;
+  font-size: var(--nx-fs-small);
+  line-height: 1.5;
+  transition: border-color var(--nx-dur-fast) var(--nx-ease-out), box-shadow var(--nx-dur-fast) var(--nx-ease-out);
+}
+
+.nx-tentang-consultation__field textarea { resize: vertical; }
+.nx-tentang-consultation__field :is(input, textarea)::placeholder { color: var(--nx-ink-muted); opacity: 1; }
+.nx-tentang-consultation__field :is(input, select, textarea):focus { border-color: var(--nx-blue); outline: 2px solid var(--nx-blue-accent); outline-offset: 2px; }
+.nx-tentang-consultation__form .nx-btn { width: 100%; gap: 12px; }
+.nx-tentang-consultation__form .nx-btn svg { width: 20px; height: 20px; }
+.nx-tentang-consultation__note { margin: 12px 0 0; color: var(--nx-ink-soft); font-size: 0.8125rem; line-height: 1.5; text-align: center; }
+
+@media (max-width: 1199px) {
+  .nx-tentang-consultation__panel { gap: 32px; }
+  .nx-tentang-consultation__fields { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 991px) {
+  .nx-tentang-consultation__panel { grid-template-columns: minmax(0, 1fr); padding: 32px; }
+  .nx-tentang-consultation__fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .nx-tentang-consultation__panel { padding: 28px 24px; }
+  .nx-tentang-consultation__form { padding: 24px 20px; }
+  .nx-tentang-consultation__fields { grid-template-columns: minmax(0, 1fr); }
+  .nx-tentang-consultation__field :is(input, select, textarea) { font-size: 1rem; }
+}

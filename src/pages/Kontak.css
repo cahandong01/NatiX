@@ -1,0 +1,69 @@
+/* Tata letak dan behavior bersama mengikuti halaman Layanan. */
+.nx-tentang {
+  --nx-tentang-gutter: clamp(20px, 3vw, 40px);
+  --nx-tentang-section-space: 60px;
+  --nx-tentang-context: color-mix(in srgb, var(--nx-blue) 10%, var(--nx-bg));
+  --nx-tentang-depth: color-mix(in srgb, var(--nx-blue) 17%, var(--nx-bg));
+  background: var(--nx-bg);
+}
+
+.nx-tentang > section { padding-block: var(--nx-tentang-section-space); }
+.nx-tentang > section + section { padding-top: 0; }
+.nx-tentang > .hero-section { padding-block: clamp(40px, 5vw, 72px); }
+
+.nx-tentang .nx-container {
+  width: 100%;
+  max-width: calc(var(--nx-container) + var(--nx-tentang-gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--nx-tentang-gutter);
+}
+
+.nx-tentang h2 {
+  margin: 0 0 16px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: var(--nx-lh-heading);
+  text-wrap: balance;
+}
+
+.nx-tentang h2 span { color: var(--nx-blue); }
+.nx-tentang .nx-tentang-vision__heading h2 { margin: 0; color: var(--nx-blue); }
+
+.nx-tentang .nx-tentang-eyebrow {
+  margin: 0 0 8px;
+  color: var(--nx-blue);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nx-tentang .nx-btn { max-width: 100%; min-height: 48px; padding-block: 12px; white-space: normal; line-height: 1.4; }
+.nx-tentang .nx-btn svg { flex-shrink: 0; }
+.nx-tentang .reveal-hidden { transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: auto; }
+.nx-tentang .reveal-visible { opacity: 1; transform: none; }
+
+.nx-tentang :is(.nx-tentang-philosophy__icon, .nx-tentang-contact__icon) {
+  transition: transform var(--nx-dur-base) var(--nx-ease-out), box-shadow var(--nx-dur-base) var(--nx-ease-out);
+}
+
+@media (hover: hover) {
+  .nx-tentang-philosophy__principles li:hover .nx-tentang-philosophy__icon { transform: translateY(-4px); box-shadow: var(--nx-shadow-2); }
+}
+
+@media (max-width: 991px) {
+  .nx-tentang > .hero-section { padding-block: 40px; }
+  .nx-tentang h2 { font-size: 1.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-tentang .reveal-hidden,
+  .nx-tentang .reveal-visible { opacity: 1; transform: none; transition: none; }
+  .nx-tentang :is(.nx-tentang-philosophy__icon, .nx-tentang-contact__icon) { transition: none; }
+  .nx-tentang .nx-tentang-philosophy__principles li:hover .nx-tentang-philosophy__icon,
+  .nx-tentang .nx-btn:hover { transform: none; }
+}
