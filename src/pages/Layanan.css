@@ -1,7 +1,7 @@
 /* Penyelarasan halaman mengikuti pola HomePolish; komponen tetap per section. */
 .nx-layanan {
   --nx-layanan-gutter: clamp(20px, 3vw, 40px);
-  --nx-layanan-section-space: 60px;
+  --nx-layanan-section-space: 40px;
   --nx-layanan-transition: 48px;
   --nx-layanan-context: color-mix(in srgb, var(--nx-blue) 10%, var(--nx-bg));
   --nx-layanan-pilot-depth: color-mix(in srgb, var(--nx-blue) 17%, var(--nx-bg));
@@ -11,14 +11,10 @@
 
 .nx-layanan > section { padding-block: var(--nx-layanan-section-space); }
 
-.nx-layanan > .nx-layanan-hero + .nx-layanan-management,
-.nx-layanan > .nx-layanan-management + .nx-layanan-implementation,
-.nx-layanan > .nx-layanan-implementation + .nx-layanan-pilot,
-.nx-layanan > .nx-layanan-pilot + .nx-layanan-support,
-.nx-layanan > .nx-layanan-support + .nx-layanan-closing { padding-top: 0; }
+.nx-layanan > .hero-section { padding-block: var(--nx-layanan-section-space); }
+.nx-layanan > section.nx-layanan-closing { padding-block: clamp(40px, 5vw, 72px); }
 
-.nx-layanan > .hero-section { padding-block: clamp(40px, 5vw, 72px); }
-
+.nx-layanan .container,
 .nx-layanan .nx-container,
 .nx-layanan .nx-layanan-hero__container {
   width: 100%;
@@ -128,6 +124,22 @@
 .nx-layanan .nx-layanan-support h3 { font-weight: 600; }
 .nx-layanan .nx-layanan-closing { background: var(--nx-layanan-support-depth); }
 
+.nx-layanan .nx-layanan-closing h2 {
+  max-width: 30ch;
+  margin: 0 0 8px;
+  color: var(--nx-bg);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: var(--nx-lh-heading);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.nx-layanan .nx-layanan-closing h2 span {
+  color: color-mix(in srgb, var(--nx-warm) 55%, var(--nx-bg));
+}
+
 .nx-layanan .nx-layanan-closing .nx-home-closing__panel {
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   border: 1px solid color-mix(in srgb, var(--nx-blue-accent) 65%, var(--nx-blue));
@@ -138,7 +150,13 @@
 }
 
 .nx-layanan .nx-layanan-closing .nx-home-closing__action { border-color: rgb(255 255 255 / 35%); }
-.nx-layanan .nx-layanan-closing .nx-layanan-closing__note { color: var(--nx-tint); text-wrap: pretty; }
+.nx-layanan .nx-layanan-closing .nx-layanan-closing__note {
+  max-width: 60ch;
+  color: var(--nx-tint);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+  text-wrap: pretty;
+}
 
 .nx-layanan .nx-btn {
   max-width: 100%;
@@ -149,7 +167,7 @@
 }
 
 .nx-layanan .nx-btn svg { flex-shrink: 0; }
-.nx-layanan .nx-layanan-closing .nx-btn { box-shadow: var(--nx-shadow-1); }
+.nx-layanan .nx-layanan-closing .nx-btn { color: var(--nx-blue-strong); box-shadow: var(--nx-shadow-1); }
 .nx-layanan .nx-layanan-closing .nx-btn:hover { background: var(--nx-tint); }
 
 .nx-layanan :is(.nx-layanan-management__icon, .nx-layanan-support__icon) {
@@ -174,13 +192,16 @@
 }
 
 @media (max-width: 991px) {
-  .nx-layanan > .hero-section { padding-block: 40px; }
+  .nx-layanan { --nx-layanan-section-space: 20px; }
+  .nx-layanan .nx-layanan-closing h2 { font-size: 1.75rem; }
   .nx-layanan .nx-layanan-management__panel { gap: 32px; }
   .nx-layanan .nx-layanan-pilot__panel { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
   .nx-layanan .nx-layanan-closing .nx-home-closing__panel { gap: 32px; }
 }
 
 @media (max-width: 767px) {
+  .nx-layanan .nx-layanan-closing h2,
+  .nx-layanan .nx-layanan-closing .nx-layanan-closing__note { margin-inline: auto; }
   .nx-layanan .nx-layanan-closing .nx-home-closing__panel { grid-template-columns: minmax(0, 1fr); }
   .nx-layanan .nx-layanan-closing .nx-home-closing__action { padding: 24px 0 0; border-left: 0; border-top: 1px solid rgb(255 255 255 / 35%); }
 }
