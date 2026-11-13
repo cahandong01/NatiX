@@ -157,13 +157,15 @@
 }
 
 .nx-home > section.nx-home-closing {
-  padding-block: var(--nx-home-section-space);
+  padding-block: clamp(40px, 5vw, 72px);
   border-top: 0;
-  background:
-    linear-gradient(to bottom, var(--nx-home-depth-start), transparent clamp(24px, 3vw, 48px)),
-    linear-gradient(to top, var(--nx-navy), transparent clamp(24px, 3vw, 48px)),
-    radial-gradient(ellipse at 85% 15%, color-mix(in srgb, var(--nx-blue-accent) 45%, transparent), transparent 65%),
-    linear-gradient(120deg, var(--nx-blue-strong), var(--nx-blue));
+  background: linear-gradient(
+    to bottom,
+    var(--nx-home-depth-start) 0%,
+    color-mix(in srgb, var(--nx-blue) 4%, var(--nx-bg)) 38%,
+    color-mix(in srgb, var(--nx-blue) 10%, var(--nx-bg)) 75%,
+    var(--nx-home-depth-start) 100%
+  );
 }
 
 .nx-home :is(.nx-value-chain__heading h2, .challenges-title, .nx-solutions-preview h2, .nx-executive h2, .nx-family-teaser h2, .benefits-title, .nx-start h2, .nx-home-closing h2) {
@@ -282,10 +284,10 @@
 
 .nx-home .nx-home-closing h2 { margin-bottom: 8px; }
 
-.nx-home .nx-home-closing__panel {
-  padding: 0;
-  background: none;
-  border-radius: 0;
+.nx-home section.nx-home-closing .nx-home-closing__panel {
+  padding: clamp(28px, 4vw, 48px);
+  background: var(--nx-blue-strong);
+  border-radius: var(--nx-r-lg);
   box-shadow: none;
 }
 .nx-home .nx-home-closing__panel::after { display: none; }
@@ -318,8 +320,7 @@
   .nx-home > section.nx-executive,
   .nx-home > section.nx-family-teaser,
   .nx-home > section.benefits-section,
-  .nx-home > section.nx-start,
-  .nx-home > section.nx-home-closing { padding-block: var(--nx-home-section-space); }
+  .nx-home > section.nx-start { padding-block: var(--nx-home-section-space); }
   .nx-home { --nx-home-section-space: 20px; }
   .nx-home .nx-home-closing__panel { gap: 20px; }
   .nx-home .hero-subtitle { margin-inline: auto; }
