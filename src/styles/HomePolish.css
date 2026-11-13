@@ -40,6 +40,7 @@
 
 .nx-home .hero-content { padding: 0; }
 .nx-home .hero-grid > * { min-width: 0; }
+.nx-home .hero-illustration-wrapper picture { display: block; }
 .nx-home .hero-buttons { flex-wrap: wrap; }
 .nx-home .hero-subtitle { max-width: 56ch; color: var(--nx-ink-soft); line-height: var(--nx-lh-body); }
 

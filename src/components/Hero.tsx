@@ -1,5 +1,6 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
 import Reveal from "./Reveal";
+import Picture from "./Picture";
 
 // Helper hook agar Hero.jsx tetap bersih dan maintainable
 function useParallax(speed = 0.4) {
@@ -74,9 +75,14 @@ export default function Hero() {
 
           <Reveal>
             <div class="hero-illustration-wrapper">
-              <img
-                src="/assets/hero_illustration.png"
+              <Picture
+                name="hero-illustration-v1"
                 alt="NatiX ERP Illustration"
+                width={1536}
+                height={1024}
+                widths={[480, 768, 1024, 1536]}
+                sizes="(max-width: 666px) calc(100vw - 40px), (max-width: 991px) 94vw, (max-width: 1320px) calc(56.4vw - 28.8px), 716px"
+                priority
                 class="hero-illustration"
               />
             </div>
