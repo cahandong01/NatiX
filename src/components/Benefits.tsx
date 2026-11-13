@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import "./Benefits.css";
 
 const benefits = [
   {

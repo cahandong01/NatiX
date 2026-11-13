@@ -79,3 +79,59 @@
 @media (prefers-reduced-motion: reduce) {
   .nx-home-closing .reveal-hidden { opacity: 1; transform: none; transition: none; }
 }
+
+/* Penutup Beranda: satu ajakan tegas, gutter sejajar, tanpa panel tambahan. */
+.nx-home section.nx-home-closing .nx-home-closing__panel {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr);
+  gap: 40px;
+  padding: 0;
+}
+
+.nx-home section.nx-home-closing h2 {
+  max-width: 30ch;
+  margin-bottom: 12px;
+  color: var(--nx-bg);
+  letter-spacing: -0.015em;
+}
+
+.nx-home section.nx-home-closing h2 span { color: color-mix(in srgb, var(--nx-warm) 55%, var(--nx-bg)); }
+.nx-home section.nx-home-closing p { max-width: 60ch; color: var(--nx-tint); text-wrap: pretty; }
+
+.nx-home section.nx-home-closing .nx-home-closing__action {
+  padding-left: 32px;
+  border-left-color: rgb(255 255 255 / 25%);
+}
+
+.nx-home section.nx-home-closing .nx-btn {
+  min-height: 52px;
+  max-width: 100%;
+  padding: 14px 28px;
+  border: 1px solid rgb(255 255 255 / 80%);
+  background: var(--nx-bg);
+  color: var(--nx-blue-strong);
+  line-height: 1.4;
+  white-space: normal;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 95%), 0 6px 18px rgb(0 10 30 / 16%);
+}
+
+.nx-home section.nx-home-closing .nx-btn svg { transition: transform var(--nx-dur-fast) var(--nx-ease-out); }
+.nx-home section.nx-home-closing .nx-btn:focus-visible { outline: 2px solid var(--nx-bg); outline-offset: 5px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .nx-home section.nx-home-closing .nx-btn:hover { background: var(--nx-tint); transform: none; box-shadow: inset 0 1px 0 rgb(255 255 255 / 95%), 0 8px 22px rgb(0 10 30 / 22%); }
+  .nx-home section.nx-home-closing .nx-btn:hover svg { transform: translateX(3px); }
+}
+
+@media (max-width: 767px) {
+  .nx-home section.nx-home-closing .nx-home-closing__panel { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .nx-home section.nx-home-closing h2,
+  .nx-home section.nx-home-closing p { margin-inline: auto; }
+  .nx-home section.nx-home-closing .nx-home-closing__action { padding: 24px 0 0; border-left: 0; border-top: 1px solid rgb(255 255 255 / 20%); }
+  .nx-home section.nx-home-closing .nx-btn { width: min(100%, 280px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-home section.nx-home-closing .nx-btn,
+  .nx-home section.nx-home-closing .nx-btn svg { transition: none; }
+  .nx-home section.nx-home-closing .nx-btn:hover svg { transform: none; }
+}

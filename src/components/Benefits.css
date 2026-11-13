@@ -1,0 +1,70 @@
+/* Finishing Manfaat: pertahankan komposisi dan card, selaraskan ritmenya. */
+.nx-home section.benefits-section .benefits-bg-left,
+.nx-home section.benefits-section .benefits-bg-right,
+.nx-home section.benefits-section .benefits-wave-silhouette { display: none; }
+.nx-home section.benefits-section::after { content: none; }
+
+.nx-home section.benefits-section .benefits-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  align-items: stretch;
+  gap: 48px;
+}
+
+.nx-home section.benefits-section .benefits-layout > * { min-width: 0; }
+.nx-home section.benefits-section .benefits-left { display: flex; flex-direction: column; height: 100%; padding-top: 0; }
+.nx-home section.benefits-section .benefits-title { letter-spacing: -0.015em; }
+.nx-home section.benefits-section .benefits-ecosystem p { text-wrap: pretty; }
+
+.nx-home section.benefits-section .benefits-tagline-box {
+  max-width: 100%;
+  margin-top: auto;
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 12%, transparent);
+  background: rgb(255 255 255 / 35%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%);
+}
+
+.nx-home section.benefits-section .benefits-tagline-text { text-wrap: pretty; }
+.nx-home section.benefits-section .benefits-right { display: grid; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.nx-home section.benefits-section .benefits-right > .reveal-hidden { height: 100%; }
+
+.nx-home section.benefits-section .benefit-card {
+  height: 100%;
+  border-color: color-mix(in srgb, var(--nx-blue) 12%, var(--nx-bg));
+  border-left-color: var(--nx-blue);
+  background: linear-gradient(145deg, var(--nx-bg), color-mix(in srgb, var(--nx-blue) 2%, var(--nx-bg)));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 85%), var(--nx-shadow-1);
+}
+
+.nx-home section.benefits-section .benefit-card-number { font-variant-numeric: lining-nums tabular-nums; box-shadow: inset 0 1px 0 rgb(255 255 255 / 18%); }
+.nx-home section.benefits-section .benefit-card-desc { line-height: var(--nx-lh-body); text-wrap: pretty; }
+
+.nx-home section.benefits-section .benefit-card-icon {
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 10%, var(--nx-bg));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 80%);
+  transition: transform var(--nx-dur-base) var(--nx-ease-out), background-color var(--nx-dur-base) var(--nx-ease-out), color var(--nx-dur-base) var(--nx-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nx-home section.benefits-section .benefit-card:hover {
+    border-color: var(--nx-blue);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 85%), var(--nx-shadow-2);
+  }
+}
+
+@media (max-width: 991px) {
+  .nx-home section.benefits-section .benefits-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .nx-home section.benefits-section .benefits-left { height: auto; }
+  .nx-home section.benefits-section .benefits-tagline-box { margin-top: 0; }
+  .nx-home section.benefits-section .benefits-right { grid-template-rows: none; }
+}
+
+@media (max-width: 600px) {
+  .nx-home section.benefits-section .benefits-tagline-box { padding: 12px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-home section.benefits-section .benefit-card,
+  .nx-home section.benefits-section .benefit-card-icon { transition: none; }
+  .nx-home section.benefits-section .benefit-card:hover,
+  .nx-home section.benefits-section .benefit-card:hover .benefit-card-icon { transform: none; }
+}

@@ -47,10 +47,8 @@ export default function Hero() {
               <p class="hero-eyebrow">PLATFORM ERP PENDIDIKAN ENTERPRISE</p>
               <h1 class="hero-title">Satu Sistem, <span class="hero-title-accent">Semua Tertata</span></h1>
               <p class="hero-subtitle">
-                Platform ERP terintegrasi untuk digitalisasi total seluruh ekosistem dan 
-                institusi pendidikan. Kendalikan manajemen akademik, administrasi keuangan, 
-                hingga tata kelola fasilitas asrama dan aktivitas harian dalam satu 
-                infrastruktur modern yang terpusat, aman, dan berskala enterprise.
+                NatiX adalah platform ERP Enterprise yang menghubungkan seluruh modul pengelolaan pendidikan dalam satu ekosistem.
+                Dari operasional harian hingga keputusan pimpinan dan tindak lanjut pendidik serta keluarga, semua bergerak dengan data yang sama.
               </p>
               
               <div class="hero-buttons">
@@ -71,24 +69,6 @@ export default function Hero() {
                   Konsultasi Gratis
                 </a>
               </div>
-              <ul class="hero-highlights" aria-label="Fondasi NatiX">
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V9h6v12M13 21V3h6v18M8 12v2M8 17v1M16 6v2M16 11v2M16 16v2" /></svg>
-                  <span>Multi Lembaga</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v5M5 16v-4h14v4" /><rect x="8" y="2" width="8" height="5" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="16" y="16" width="6" height="6" rx="1" /></svg>
-                  <span>Multi Cabang</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 16l9 5 9-5" /></svg>
-                  <span>Multi Tenant</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4v5c0 5-8 9-8 9s-8-4-8-9V7zM8 12l3 3 5-6" /></svg>
-                  <span>Kelas Enterprise</span>
-                </li>
-              </ul>
             </div>
           </Reveal>
 

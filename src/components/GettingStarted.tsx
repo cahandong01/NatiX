@@ -31,7 +31,18 @@ export default function GettingStarted() {
             <p>Dari memahami kebutuhan hingga mendampingi penerapan, setiap tahap disesuaikan dengan kesiapan lembaga Anda.</p>
           </div>
         </Reveal>
-        <ol class="nx-start__steps" role="list">
+        <div class="nx-start__panel">
+          <svg class="nx-start__segments" viewBox="0 0 1200 360" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="nx-start-middle-fill" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                <stop stop-color="var(--nx-bg)" stop-opacity="0.15" />
+                <stop offset="1" stop-color="var(--nx-blue-accent)" stop-opacity="0.09" />
+              </linearGradient>
+            </defs>
+            <path d="M370 0H770L814 180L770 360H370L414 180Z" fill="url(#nx-start-middle-fill)" />
+            <path d="M370 0L414 180L370 360M770 0L814 180L770 360" fill="none" stroke="var(--nx-blue-accent)" stroke-opacity="0.28" stroke-width="1" vector-effect="non-scaling-stroke" />
+          </svg>
+          <ol class="nx-start__steps" role="list">
           <For each={steps}>{(step, index) => (
             <li>
               <Reveal delay={index() * 150}>
@@ -48,7 +59,8 @@ export default function GettingStarted() {
               </Reveal>
             </li>
           )}</For>
-        </ol>
+          </ol>
+        </div>
       </div>
     </section>
   );

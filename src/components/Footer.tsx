@@ -54,8 +54,13 @@ export default function Footer() {
           </div>
         </div>
         <div class="nx-footer__bottom">
-          <div class="nx-footer__copyright"><span>© {new Date().getFullYear()} NatiX</span><Show when={SITE.showHfpLabel}><span>Produk HFP System</span></Show></div>
-          <button type="button" class="nx-footer__top" onClick={backToTop}>Kembali ke atas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6" /></svg></button>
+          <div class="nx-footer__copyright"><span>© {new Date().getFullYear()} NatiX</span></div>
+          <Show when={SITE.showHfpLabel}>
+            <div class="nx-footer__hfp">
+              <img src="/assets/hfp-system-footer.webp" alt="HFP System" width="260" height="42" loading="lazy" decoding="async" />
+            </div>
+          </Show>
+          <button type="button" class="nx-footer__top" onClick={backToTop}><span class="nx-footer__top-label">Kembali ke atas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6" /></svg></button>
         </div>
       </Container>
     </footer>

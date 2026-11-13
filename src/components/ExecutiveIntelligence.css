@@ -113,3 +113,74 @@
     transition: none;
   }
 }
+
+/* Finishing visual khusus titik tekan Eksekutif pada Beranda. */
+.nx-home section.nx-executive .nx-executive__grid { align-items: start; }
+
+/* Pangkas hanya margin transparan bawaan; layar dan perangkat tetap utuh. */
+.nx-home section.nx-executive .nx-executive__visual figure {
+  position: relative;
+  width: 100%;
+  max-width: 612px;
+  aspect-ratio: 588 / 372;
+  margin: 0;
+  overflow: hidden;
+  filter: drop-shadow(0 14px 22px rgb(0 10 30 / 22%));
+}
+
+.nx-home section.nx-executive .nx-executive__visual picture { position: absolute; inset: 0; }
+
+.nx-home section.nx-executive .nx-executive__image {
+  position: absolute;
+  top: -3.7634%;
+  left: -3.4014%;
+  width: 104.0816%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  filter: none;
+}
+
+.nx-home section.nx-executive h2 {
+  max-width: 26ch;
+  color: color-mix(in srgb, var(--nx-bg) 96%, var(--nx-tint));
+  letter-spacing: -0.015em;
+}
+
+.nx-home section.nx-executive .nx-executive__lead {
+  max-width: 48ch;
+  color: color-mix(in srgb, var(--nx-tint) 85%, var(--nx-bg));
+}
+
+.nx-home section.nx-executive .nx-executive__points { gap: 12px; }
+.nx-home section.nx-executive .nx-executive__points li { color: var(--nx-tint); text-wrap: pretty; }
+
+.nx-home section.nx-executive .nx-btn {
+  min-height: 48px;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.4;
+  padding-block: 12px;
+  border-color: rgb(255 255 255 / 75%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 85%), 0 6px 18px rgb(0 10 30 / 16%);
+}
+
+.nx-home section.nx-executive .nx-btn:focus-visible {
+  outline: 2px solid var(--nx-bg);
+  outline-offset: 5px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nx-home section.nx-executive .nx-btn:hover {
+    border-color: color-mix(in srgb, var(--nx-warm) 55%, var(--nx-bg));
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 85%), 0 10px 24px rgb(0 10 30 / 22%);
+  }
+}
+
+@media (max-width: 991px) {
+  .nx-home section.nx-executive .nx-executive__visual figure { margin-inline: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-home section.nx-executive .nx-btn:hover { transform: none; }
+}

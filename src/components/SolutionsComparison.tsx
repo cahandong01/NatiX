@@ -9,6 +9,7 @@ const contexts = [
     description: "Hubungkan kegiatan akademik dan administrasi agar informasi siswa tidak terpisah antarbagian.",
     scope: ["Penerimaan dan data siswa", "Kehadiran, nilai, dan rapor", "Tagihan dan pembayaran"],
     link: "Lihat Solusi Sekolah",
+    href: "/solusi#solusi-school-title",
     icon: <><path d="m3 7 9-4 9 4-9 4-9-4zM6 9v7c3 3 9 3 12 0V9M21 7v7" /></>,
   },
   {
@@ -16,6 +17,7 @@ const contexts = [
     description: "Selaraskan pendidikan, pembinaan santri, dan kehidupan asrama dengan kebiasaan kerja lembaga.",
     scope: ["Halaqah kitab dan tahfidz", "Pembinaan dan perizinan", "Asrama dan kebutuhan harian"],
     link: "Lihat Solusi Pesantren",
+    href: "/solusi#solusi-boarding-title",
     icon: <><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2M12 5c3-2 7-2 10-1v15c-3-1-7-1-10 2" /></>,
   },
   {
@@ -23,6 +25,7 @@ const contexts = [
     description: "Satukan pandangan atas seluruh lembaga dengan pembagian kewenangan yang jelas.",
     scope: ["Konsolidasi informasi lembaga", "Hak akses sesuai peran", "Evaluasi dan keputusan pimpinan"],
     link: "Lihat Solusi Yayasan",
+    href: "/solusi#solusi-foundation-title",
     icon: <><path d="M12 7v5M5 16v-4h14v4" /><rect x="8" y="2" width="8" height="5" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="16" y="16" width="6" height="6" rx="1" /></>,
   },
 ];
@@ -56,7 +59,7 @@ export default function SolutionsComparison() {
                       </li>
                     )}</For>
                   </ul>
-                  <Link href="/solusi" class="nx-solutions-preview__link">
+                  <Link href={context.href} class="nx-solutions-preview__link">
                     {context.link}
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg>
                   </Link>

@@ -1,7 +1,7 @@
 import { useLocation } from "@solidjs/router";
 import { createEffect, createSignal, For, on, onCleanup, onMount } from "solid-js";
 import { PAGES } from "../seo";
-import { DEMO_LINK } from "../site";
+import { SITE } from "../site";
 import Button from "./Button";
 import Link from "./Link";
 
@@ -37,7 +37,7 @@ export default function Header() {
         </nav>
 
         <div class="nx-header__cta">
-          <Button href={DEMO_LINK}>Minta Demo</Button>
+          <Button href={SITE.demoUrl}>Versi Demo</Button>
         </div>
 
         <button
@@ -62,9 +62,10 @@ export default function Header() {
               </Link>
             )}
           </For>
-          <Button href={DEMO_LINK}>Minta Demo</Button>
+          <Button href={SITE.demoUrl}>Versi Demo</Button>
         </nav>
       </div>
     </header>
   );
 }
+

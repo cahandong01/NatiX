@@ -157,3 +157,96 @@
   .nx-solutions-preview__icon, .nx-solutions-preview__link svg { transition: none; }
   .nx-solutions-preview__context:hover .nx-solutions-preview__icon, .nx-solutions-preview__link:hover svg { transform: none; }
 }
+
+/* Bingkai garis transparan; isi dan posisi tiga kelompok tetap. */
+.nx-home section.nx-solutions-preview .nx-solutions-preview__columns { gap: 24px; }
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__columns > li {
+  padding: 0;
+  border: 0;
+}
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__context {
+  position: relative;
+  isolation: isolate;
+  padding: 24px;
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 10%, transparent);
+  border-radius: var(--nx-r-lg);
+  background: linear-gradient(145deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 2%));
+  box-shadow: 0 2px 4px rgb(11 31 58 / 2%), 0 12px 28px rgb(11 31 58 / 4%);
+  transition: box-shadow var(--nx-dur-base) var(--nx-ease-out);
+}
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__context::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--nx-blue-accent) 45%, transparent), rgb(255 255 255 / 80%) 34%, color-mix(in srgb, var(--nx-blue) 8%, transparent) 64%, color-mix(in srgb, var(--nx-blue) 32%, transparent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0.65;
+  transition: opacity var(--nx-dur-base) var(--nx-ease-out);
+  pointer-events: none;
+}
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__context:hover .nx-solutions-preview__icon {
+  background: color-mix(in srgb, var(--nx-bg) 65%, var(--nx-home-depth-solutions));
+  color: var(--nx-blue);
+  transform: none;
+}
+
+@media (min-width: 992px) {
+  .nx-home section.nx-solutions-preview .nx-solutions-preview__description { min-height: 4.95em; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nx-home section.nx-solutions-preview .nx-solutions-preview__context:hover {
+    box-shadow: 0 2px 6px rgb(11 31 58 / 3%), 0 16px 36px rgb(0 86 179 / 8%);
+  }
+
+  .nx-home section.nx-solutions-preview .nx-solutions-preview__context:hover::before { opacity: 1; }
+}
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__context:focus-within {
+  box-shadow: 0 2px 6px rgb(11 31 58 / 3%), 0 16px 36px rgb(0 86 179 / 8%);
+}
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__context:focus-within::before { opacity: 1; }
+
+@media (max-width: 991px) {
+  .nx-home section.nx-solutions-preview .nx-solutions-preview__columns { gap: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-home section.nx-solutions-preview .nx-solutions-preview__context,
+  .nx-home section.nx-solutions-preview .nx-solutions-preview__context::before { transition: none; }
+}
+
+/* Ritme isi dan footer tautan, tanpa gerak pada kelompok atau ikon. */
+.nx-home section.nx-solutions-preview .nx-solutions-preview__title { margin-bottom: 20px; }
+.nx-home section.nx-solutions-preview .nx-solutions-preview__title h3 { text-wrap: balance; }
+.nx-home section.nx-solutions-preview .nx-solutions-preview__description { text-wrap: pretty; }
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__icon {
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 10%, transparent);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%);
+}
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__link {
+  width: 100%;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--nx-blue) 12%, transparent);
+  text-underline-offset: 5px;
+}
+
+.nx-home section.nx-solutions-preview .nx-solutions-preview__link:focus-visible {
+  outline: 2px solid var(--nx-blue-accent);
+  outline-offset: 5px;
+  border-radius: var(--nx-r-sm);
+}

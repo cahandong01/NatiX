@@ -6,8 +6,8 @@ export const SITE = {
   city: "Sleman, Yogyakarta",
   whatsapp: { number: "6285815227572", display: "0858 1522 7572" },
   demoUrl: "https://demo.natix.id",
-  /** Aktifkan setelah domain HFP System siap: menampilkan label "produk HFP System" di footer. */
-  showHfpLabel: false,
+  /** Tampilkan logo HFP System pada baris bawah footer. */
+  showHfpLabel: true,
   /** Isi href dengan URL akun resmi. URL kosong tampil sebagai ikon nonaktif. */
   socials: [
     { label: "LinkedIn", href: "" },

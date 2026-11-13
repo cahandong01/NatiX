@@ -137,3 +137,128 @@
     transition: none;
   }
 }
+
+/* Family tetap terbuka dan tenang; fokus pada cerita anak dan visual ponsel. */
+.nx-home section.nx-family-teaser .nx-family-teaser__grid { align-items: start; }
+.nx-home section.nx-family-teaser h2 { letter-spacing: -0.015em; }
+.nx-home section.nx-family-teaser .nx-family-teaser__lead { max-width: 48ch; }
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities li > div { min-width: 0; }
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities h3 { text-wrap: balance; }
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities p { text-wrap: pretty; }
+
+.nx-home section.nx-family-teaser .nx-family-teaser__icon {
+  border-color: color-mix(in srgb, var(--nx-blue) 12%, var(--nx-bg));
+  background: linear-gradient(145deg, var(--nx-bg), var(--nx-tint));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 85%);
+}
+
+.nx-home section.nx-family-teaser .nx-family-teaser__image { margin: 0 0 0 auto; }
+
+.nx-home section.nx-family-teaser .nx-btn {
+  min-height: 48px;
+  max-width: 100%;
+  padding-block: 12px;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.nx-home section.nx-family-teaser .nx-btn:focus-visible {
+  outline: 2px solid var(--nx-blue-accent);
+  outline-offset: 5px;
+}
+
+@media (max-width: 991px) {
+  .nx-home section.nx-family-teaser .nx-family-teaser__image { margin-inline: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-home section.nx-family-teaser .nx-btn:hover { transform: none; }
+}
+
+/* Enam manfaat: dua kolom terbuka dengan jangkar ikon dan pemisah pendek. */
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 52px;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--nx-blue) 45%, transparent), transparent);
+  opacity: 0.55;
+  transition: opacity var(--nx-dur-fast) var(--nx-ease-out);
+  pointer-events: none;
+}
+
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities li:nth-last-child(-n + 2) { padding-bottom: 0; }
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities li:nth-last-child(-n + 2)::after { content: none; }
+
+.nx-home section.nx-family-teaser .nx-family-teaser__icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid color-mix(in srgb, var(--nx-blue) 16%, var(--nx-bg));
+  border-radius: var(--nx-r-md);
+  background: linear-gradient(145deg, var(--nx-bg), var(--nx-tint));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 90%), 0 2px 5px rgb(11 31 58 / 4%);
+  transition: border-color var(--nx-dur-fast) var(--nx-ease-out), color var(--nx-dur-fast) var(--nx-ease-out);
+}
+
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities h3 {
+  margin-bottom: 6px;
+  color: var(--nx-navy);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.nx-home section.nx-family-teaser .nx-family-teaser__capabilities p {
+  color: var(--nx-ink-soft);
+  line-height: var(--nx-lh-body);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities li:hover .nx-family-teaser__icon {
+    border-color: color-mix(in srgb, var(--nx-blue) 38%, var(--nx-bg));
+    color: var(--nx-blue-strong);
+  }
+
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities li:hover::after { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities li:nth-last-child(2) { padding-bottom: 20px; }
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities li:nth-last-child(2)::after { content: ""; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-home section.nx-family-teaser .nx-family-teaser__icon,
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities li::after { transition: none; }
+}
+
+/* Rapatkan kolom narasi pada tampilan berdampingan; ukuran visual tetap. */
+@media (min-width: 992px) {
+  .nx-home section.nx-family-teaser .nx-family-teaser__visual { margin-top: 12px; }
+  .nx-home section.nx-family-teaser .nx-family-teaser__lead { margin-bottom: 20px; }
+
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities {
+    gap: 16px 24px;
+    margin-bottom: 24px;
+  }
+
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities li { padding-bottom: 12px; }
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities li:nth-last-child(-n + 2) { padding-bottom: 0; }
+  .nx-home section.nx-family-teaser .nx-family-teaser__capabilities h3 { margin-bottom: 4px; }
+}

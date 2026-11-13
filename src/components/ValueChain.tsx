@@ -15,7 +15,7 @@ const steps = [
     icon: <><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0" /></>,
   },
   {
-    title: "Education Insights",
+    title: "Wawasan Pendidikan",
     description: "Data menjadi tren dan evaluasi untuk menentukan tindak lanjut.",
     icon: <><path d="M4 21h16" /><rect x="5" y="12" width="3" height="6" rx="1" /><rect x="11" y="8" width="3" height="10" rx="1" /><rect x="17" y="3" width="3" height="15" rx="1" /></>,
   },

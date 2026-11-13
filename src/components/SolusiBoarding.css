@@ -42,6 +42,7 @@
 }
 
 .nx-solusi-boarding h2 {
+  scroll-margin-top: calc(var(--nx-header-h) + 48px);
   margin: 0 0 16px;
   color: var(--nx-navy);
   font-family: var(--nx-font-heading);
@@ -103,7 +104,8 @@
 @media (max-width: 991px) {
   .nx-solusi-boarding__grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .nx-solusi-boarding__content { grid-row: 1; }
-  .nx-solusi-boarding h2 { font-size: 1.75rem; }
+  .nx-solusi-boarding h2 {
+  scroll-margin-top: calc(var(--nx-header-h) + 48px); font-size: 1.75rem; }
   .nx-solusi-boarding__visual figure { position: static; max-width: 640px; margin-inline: auto; }
   .nx-solusi-boarding__visual picture { height: auto; }
   .nx-solusi-boarding__image { height: auto; }

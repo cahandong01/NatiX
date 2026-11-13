@@ -43,6 +43,7 @@
 }
 
 .nx-solusi-foundation h2 {
+  scroll-margin-top: calc(var(--nx-header-h) + 48px);
   margin: 0 0 16px;
   color: var(--nx-navy);
   font-family: var(--nx-font-heading);
@@ -197,7 +198,8 @@
 
 @media (max-width: 991px) {
   .nx-solusi-foundation__grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .nx-solusi-foundation h2 { font-size: 1.75rem; }
+  .nx-solusi-foundation h2 {
+  scroll-margin-top: calc(var(--nx-header-h) + 48px); font-size: 1.75rem; }
   .nx-solusi-foundation__diagram { max-width: 680px; margin-inline: auto; }
 }
 

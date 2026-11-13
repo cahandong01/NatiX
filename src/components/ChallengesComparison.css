@@ -1,53 +1,132 @@
-.nx-challenges-comparison .card-illustration {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 12px;
-  border-radius: 50%;
-  background: var(--nx-tint);
+/* Satu komposisi: narasi dan empat hambatan rapat, perangkat tanpa tangan atau panel. */
+.nx-home .nx-challenges-comparison .challenges-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: 48px;
+  margin: 0;
+}
+
+.nx-home .nx-challenges-comparison .challenges-grid > * { min-width: 0; }
+.nx-home .nx-challenges-comparison .section-header { max-width: none; margin: 0; text-align: left; }
+.nx-home .nx-challenges-comparison .challenges-title { margin-bottom: 16px; text-align: left; }
+
+.nx-home section.nx-challenges-comparison .challenges-subtitle {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.nx-home .nx-challenges-comparison .challenges-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 20px;
+  height: auto;
+  margin: 28px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--nx-blue) 16%, transparent);
+}
+
+.nx-home section.nx-challenges-comparison .challenge-card,
+.nx-home section.nx-challenges-comparison .challenge-card:hover {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: start;
+  align-content: start;
+  gap: 12px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  text-align: left;
+  transform: none;
+  transition: none;
+}
+
+.nx-home section.nx-challenges-comparison .card-illustration,
+.nx-home section.nx-challenges-comparison .challenge-card:hover .card-illustration {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin: 2px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
   color: var(--nx-blue);
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: none;
+  transform: none;
+  transition: none;
 }
 
-.nx-challenges-comparison .card-illustration svg {
-  width: 26px;
-  height: 26px;
-}
+.nx-challenges-comparison .card-illustration svg { display: block; width: 24px; height: 24px; }
 
-.nx-challenges-comparison .challenge-card {
-  border-color: var(--nx-line);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.nx-challenges-comparison .challenge-card h3 {
+.nx-home .nx-challenges-comparison .challenge-card h3 {
+  min-height: 0;
+  margin: 0;
   color: var(--nx-navy);
   font-family: var(--nx-font-body);
-  font-size: 0.9375rem;
-  font-weight: 700;
-  line-height: 1.4;
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.5;
+  text-wrap: pretty;
 }
 
-.nx-challenges-comparison .challenge-card:hover {
-  transform: none;
-  box-shadow: var(--shadow-soft);
-  border-color: var(--nx-line);
+.nx-home .nx-challenges-comparison .nx-challenges-comparison__visual { min-width: 0; }
+
+.nx-home .nx-challenges-comparison .challenges-dashboard-preview {
+  display: block;
+  width: 100%;
+  max-width: 612px;
+  height: auto;
+  margin: 0 0 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
 }
 
-@media (hover: hover) {
-  .nx-challenges-comparison .challenge-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--nx-blue);
+.nx-home .nx-challenges-comparison .challenges-dashboard-preview picture { display: block; width: 100%; }
+.nx-home .nx-challenges-comparison .challenges-dashboard-preview::before,
+.nx-home .nx-challenges-comparison .challenges-dashboard-preview::after { content: none; }
+
+.nx-home .nx-challenges-comparison .dashboard-img-actual {
+  display: block;
+  width: 100%;
+  max-width: 612px;
+  height: auto;
+  margin: 0;
+  filter: none;
+}
+
+/* Pembesaran desktop mengikuti alur layout, dengan sisi kanan tetap pada gutter. */
+@media (min-width: 992px) {
+  .nx-home .nx-challenges-comparison .challenges-dashboard-preview {
+    width: 104%;
+    max-width: 636px;
   }
 
-  .nx-challenges-comparison .challenge-card:hover .card-illustration {
-    background: var(--nx-blue);
-    color: var(--nx-bg);
-    transform: scale(1.1) rotate(5deg);
-  }
+  .nx-home .nx-challenges-comparison .dashboard-img-actual { max-width: none; }
+}
+
+@media (max-width: 991px) {
+  .nx-home .nx-challenges-comparison .challenges-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .nx-home .nx-challenges-comparison .nx-challenges-comparison__copy { width: 100%; max-width: 680px; margin-inline: auto; }
+  .nx-home .nx-challenges-comparison .challenges-dashboard-preview { margin-inline: auto; }
+}
+
+@media (max-width: 600px) {
+  .nx-home .nx-challenges-comparison .challenges-cards { grid-template-columns: minmax(0, 1fr); gap: 20px; margin-top: 24px; padding-top: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .nx-challenges-comparison .reveal-hidden { opacity: 1; transform: none; transition: none; }
-  .nx-challenges-comparison .challenge-card, .nx-challenges-comparison .card-illustration { transition: none; }
-  .nx-challenges-comparison .challenge-card:hover, .nx-challenges-comparison .challenge-card:hover .card-illustration { transform: none; }
 }
