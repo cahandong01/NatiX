@@ -1,16 +1,17 @@
 /* Tata letak dan behavior bersama mengikuti halaman Layanan. */
 .nx-tentang {
   --nx-tentang-gutter: clamp(20px, 3vw, 40px);
-  --nx-tentang-section-space: 60px;
+  --nx-tentang-section-space: 40px;
   --nx-tentang-context: color-mix(in srgb, var(--nx-blue) 10%, var(--nx-bg));
   --nx-tentang-depth: color-mix(in srgb, var(--nx-blue) 17%, var(--nx-bg));
   background: var(--nx-bg);
 }
 
 .nx-tentang > section { padding-block: var(--nx-tentang-section-space); }
-.nx-tentang > section + section { padding-top: 0; }
-.nx-tentang > .hero-section { padding-block: clamp(40px, 5vw, 72px); }
+.nx-tentang > .hero-section { padding-block: var(--nx-tentang-section-space); }
+.nx-tentang > section.nx-tentang-closing { padding-block: clamp(40px, 5vw, 72px); }
 
+.nx-tentang .container,
 .nx-tentang .nx-container {
   width: 100%;
   max-width: calc(var(--nx-container) + var(--nx-tentang-gutter) * 2);
@@ -44,6 +45,57 @@
 
 .nx-tentang .nx-btn { max-width: 100%; min-height: 48px; padding-block: 12px; white-space: normal; line-height: 1.4; }
 .nx-tentang .nx-btn svg { flex-shrink: 0; }
+
+.nx-tentang .nx-tentang-closing {
+  background: color-mix(in srgb, var(--nx-blue) 12%, var(--nx-bg));
+}
+
+.nx-tentang .nx-tentang-closing__panel::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: -230px;
+  z-index: -1;
+  width: 500px;
+  height: 320px;
+  border-radius: 50%;
+  border: 40px solid rgb(255 255 255 / 8%);
+  pointer-events: none;
+}
+
+.nx-tentang .nx-tentang-closing__panel {
+  background:
+    radial-gradient(ellipse at 85% 0%, color-mix(in srgb, var(--nx-blue-accent) 55%, transparent), transparent 65%),
+    linear-gradient(120deg, var(--nx-blue-strong), var(--nx-blue));
+  border-color: color-mix(in srgb, var(--nx-blue-accent) 65%, var(--nx-blue));
+  box-shadow: var(--nx-shadow-2);
+}
+
+.nx-tentang .nx-tentang-closing h2 {
+  max-width: 30ch;
+  margin: 0 auto 24px;
+  color: var(--nx-bg);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: var(--nx-lh-heading);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.nx-tentang .nx-tentang-closing h2 span {
+  color: color-mix(in srgb, var(--nx-warm) 55%, var(--nx-bg));
+}
+
+.nx-tentang .nx-tentang-closing .nx-btn {
+  background: var(--nx-bg);
+  border-color: rgb(255 255 255 / 80%);
+  color: var(--nx-blue-strong);
+}
+
+.nx-tentang .nx-tentang-closing .nx-btn:hover { background: var(--nx-tint); }
+.nx-tentang .nx-tentang-closing .nx-btn:focus-visible { outline: 2px solid var(--nx-bg); outline-offset: 5px; }
+
 .nx-tentang .reveal-hidden { transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: auto; }
 .nx-tentang .reveal-visible { opacity: 1; transform: none; }
 
@@ -56,7 +108,8 @@
 }
 
 @media (max-width: 991px) {
-  .nx-tentang > .hero-section { padding-block: 40px; }
+  .nx-tentang { --nx-tentang-section-space: 20px; }
+  .nx-tentang .nx-tentang-closing h2 { font-size: 1.75rem; }
   .nx-tentang h2 { font-size: 1.75rem; }
 }
 
