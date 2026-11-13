@@ -21,10 +21,19 @@ export default function PlatformFoundation() {
         <Reveal delay={90} class="nx-platform-foundation__panel nx-platform-foundation__visual">
           <svg class="nx-platform-foundation__diagram" viewBox="0 0 340 276" role="img" aria-labelledby="platform-foundation-diagram-title">
             <title id="platform-foundation-diagram-title">Lembaga dan pengguna terhubung melalui satu platform dengan data dan kewenangan yang terkelola.</title>
-            <g fill="none" stroke="var(--nx-blue)" stroke-width="1.5" opacity=".35"><path d="M170 86v22M170 178v22M38 140H18v94h12M302 140h20v94h-12" /></g>
-            <rect x="70" y="18" width="200" height="68" rx="14" fill="var(--nx-bg)" stroke="var(--nx-line)" />
-            <rect x="34" y="108" width="272" height="70" rx="14" fill="var(--nx-blue)" />
-            <rect x="10" y="200" width="320" height="60" rx="14" fill="var(--nx-tint)" stroke="var(--nx-line)" />
+            <defs>
+              <linearGradient id="platform-foundation-core" x1="34" y1="108" x2="306" y2="178" gradientUnits="userSpaceOnUse">
+                <stop stop-color="var(--nx-blue-accent)" />
+                <stop offset="1" stop-color="var(--nx-blue-strong)" />
+              </linearGradient>
+              <filter id="platform-foundation-depth" x="-10%" y="-20%" width="120%" height="150%" color-interpolation-filters="sRGB">
+                <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="var(--nx-navy)" flood-opacity=".12" />
+              </filter>
+            </defs>
+            <g fill="none" stroke="var(--nx-blue)" stroke-width="1.5" opacity=".55"><path d="M170 86v22M170 178v22M38 140H18v94h12M302 140h20v94h-12" /></g>
+            <rect x="70" y="18" width="200" height="68" rx="14" fill="var(--nx-bg)" stroke="var(--nx-line)" filter="url(#platform-foundation-depth)" />
+            <rect x="34" y="108" width="272" height="70" rx="14" fill="url(#platform-foundation-core)" filter="url(#platform-foundation-depth)" />
+            <rect x="10" y="200" width="320" height="60" rx="14" fill="var(--nx-tint)" stroke="var(--nx-line)" filter="url(#platform-foundation-depth)" />
             <g text-anchor="middle" font-family="var(--nx-font-body)">
               <text x="170" y="48" fill="var(--nx-navy)" font-size="15" font-weight="600">Lembaga &amp; pengguna</text>
               <text x="170" y="68" fill="var(--nx-ink-soft)" font-size="12">Terhubung sesuai peran</text>

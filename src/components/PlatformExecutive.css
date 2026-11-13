@@ -1,9 +1,10 @@
-/* Section 2: ukuran judul dan jarak mengikuti section 2 Beranda. */
+/* Section 3: permukaan dan jarak mengikuti alur halaman Platform. */
 .nx-platform-executive {
-  padding-block: 60px;
+  padding-block: var(--nx-platform-section-space);
   background:
-    radial-gradient(ellipse at 15% 45%, rgb(255 255 255 / 65%), transparent 65%),
-    var(--nx-tint);
+    linear-gradient(180deg, var(--nx-tint), transparent 25%, transparent 75%, var(--nx-tint)),
+    radial-gradient(ellipse 60% 70% at 5% 55%, color-mix(in srgb, var(--nx-blue) 22%, transparent), transparent 75%),
+    linear-gradient(110deg, var(--nx-tint), var(--nx-bg) 65%);
 }
 
 .nx-platform-executive__grid {
@@ -15,15 +16,15 @@
 }
 
 .nx-platform-executive__visual { position: relative; min-width: 0; }
-.nx-platform-executive__visual figure { position: absolute; inset: 0; min-height: 4.8em;
-  margin: 0; }
+.nx-platform-executive__visual figure { position: absolute; inset: 0; margin: 0; }
 .nx-platform-executive__visual picture { display: block; height: 100%; }
 .nx-platform-executive__image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
+  object-position: center bottom;
+  filter: drop-shadow(0 12px 12px rgb(11 31 58 / 12%));
 }
 
 .nx-platform-executive__content {
@@ -62,7 +63,6 @@
 }
 
 .nx-platform-executive__points {
-
   align-content: start;
   display: grid;
   gap: 8px;

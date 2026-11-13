@@ -1,7 +1,13 @@
-/* Transisi Reveal mengikuti Beranda. */
+.nx-platform {
+  --nx-platform-section-space: 40px;
+  --nx-platform-foundation-end: color-mix(in srgb, var(--nx-blue) 16%, var(--nx-bg));
+  --nx-platform-hero-end: color-mix(in srgb, var(--nx-blue-accent) 10%, var(--nx-bg));
+}
+
+/* Fade mempertahankan posisi konten terhadap batas section saat masuk. */
 .nx-platform .reveal-hidden {
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: none;
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   will-change: auto;
 }
 
@@ -10,4 +16,8 @@
 @media (prefers-reduced-motion: reduce) {
   .nx-platform .reveal-hidden,
   .nx-platform .reveal-visible { opacity: 1; transform: none; transition: none; }
+}
+
+@media (max-width: 991px) {
+  .nx-platform { --nx-platform-section-space: 20px; }
 }

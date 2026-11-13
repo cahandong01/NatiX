@@ -16,13 +16,13 @@ const steps: { title: string; description: string; icon: JSX.Element }[] = [
     icon: <><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0" /></>,
   },
   {
-    title: "Insight",
+    title: "Wawasan",
     description: "Tren dan evaluasi kondisi lembaga.",
     icon: <><path d="M4 21h16" /><rect x="5" y="12" width="3" height="6" rx="1" /><rect x="11" y="8" width="3" height="10" rx="1" /><rect x="17" y="3" width="3" height="15" rx="1" /></>,
   },
   {
     title: "Keputusan",
-    description: "Prioritas pimpinan berdasarkan data.",
+    description: "Prioritas berbasis data.",
     icon: <><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><path d="m12 12 9-9M16 3h5v5" /></>,
   },
   {
