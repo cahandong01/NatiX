@@ -290,7 +290,7 @@
   border-radius: var(--nx-r-lg);
   box-shadow: none;
 }
-.nx-home .nx-home-closing__panel::after { display: none; }
+.nx-home .nx-home-closing__panel::after { display: block; }
 .nx-home .nx-home-closing__action { border-left-color: rgb(255 255 255 / 35%); }
 
 .nx-home :is(.hero-title, .challenges-title, .benefits-title):hover { text-shadow: none; }
