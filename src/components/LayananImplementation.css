@@ -1,0 +1,134 @@
+.nx-layanan-implementation {
+  background:
+    radial-gradient(ellipse at 85% 70%, color-mix(in srgb, var(--nx-blue-accent) 10%, transparent), transparent 65%),
+    var(--nx-bg);
+}
+
+.nx-layanan-implementation__heading {
+  max-width: 1040px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.nx-layanan-implementation__heading .nx-layanan-implementation__eyebrow {
+  margin: 0 0 8px;
+  color: var(--nx-blue);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nx-layanan-implementation h2 {
+  margin: 0 0 16px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: var(--nx-lh-heading);
+  text-wrap: balance;
+}
+
+.nx-layanan-implementation h2 span { color: var(--nx-blue); }
+
+.nx-layanan-implementation__heading > p:not(.nx-layanan-implementation__eyebrow) {
+  max-width: 80ch;
+  margin: 0 auto;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-body);
+  line-height: var(--nx-lh-body);
+  text-wrap: pretty;
+}
+
+.nx-layanan-implementation__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-layanan-implementation__steps::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: color-mix(in srgb, var(--nx-blue-accent) 40%, var(--nx-tint));
+  pointer-events: none;
+}
+
+.nx-layanan-implementation__steps > li { position: relative; min-width: 0; }
+
+.nx-layanan-implementation__step { text-align: center; }
+
+.nx-layanan-implementation__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border: 3px solid var(--nx-bg);
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--nx-blue-accent), var(--nx-blue));
+  color: var(--nx-bg);
+  box-shadow: var(--nx-shadow-2);
+}
+
+.nx-layanan-implementation__icon svg { width: 26px; height: 26px; }
+
+.nx-layanan-implementation__number {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--nx-blue);
+  font-family: var(--nx-font-body);
+  font-size: var(--nx-fs-lead);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.nx-layanan-implementation h3 {
+  margin: 0 0 8px;
+  color: var(--nx-navy);
+  font-family: var(--nx-font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.nx-layanan-implementation__step p {
+  max-width: 24ch;
+  margin: 0 auto;
+  color: var(--nx-ink-soft);
+  font-size: var(--nx-fs-small);
+  line-height: var(--nx-lh-body);
+}
+
+.nx-layanan-implementation .reveal-hidden {
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: auto;
+}
+
+.nx-layanan-implementation .reveal-visible { opacity: 1; transform: none; }
+
+@media (max-width: 991px) {
+  .nx-layanan-implementation h2 { font-size: 1.75rem; }
+  .nx-layanan-implementation__steps { grid-template-columns: minmax(0, 1fr); gap: 32px; max-width: 640px; margin-inline: auto; }
+  .nx-layanan-implementation__steps::before { top: 28px; bottom: 28px; left: 27px; right: auto; width: 2px; height: auto; }
+  .nx-layanan-implementation__step { position: relative; min-height: 56px; padding-left: 80px; text-align: left; }
+  .nx-layanan-implementation__icon { position: absolute; top: 0; left: 0; margin: 0; }
+  .nx-layanan-implementation__step p { max-width: 48ch; margin: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-layanan-implementation .reveal-hidden,
+  .nx-layanan-implementation .reveal-visible { opacity: 1; transform: none; transition: none; }
+}
+

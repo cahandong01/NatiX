@@ -1,0 +1,49 @@
+.nx-layanan-hero {
+  padding-block: clamp(40px, 5vw, 72px);
+  background: radial-gradient(ellipse at 85% 35%, color-mix(in srgb, var(--nx-blue-accent) 13%, transparent), transparent 65%), linear-gradient(155deg, var(--nx-bg), var(--nx-tint));
+}
+
+.nx-layanan-hero__content { text-align: center; min-width: 0; }
+
+.nx-layanan-hero .hero-eyebrow {
+  font-family: var(--nx-font-body);
+  letter-spacing: 0.08em;
+}
+
+.nx-layanan-hero .hero-title {
+  max-width: 1040px;
+  margin-inline: auto;
+  font-family: var(--nx-font-heading);
+  color: var(--nx-navy);
+  text-wrap: balance;
+}
+
+.nx-layanan-hero .hero-title-accent { display: block; }
+.nx-layanan-hero .hero-title:hover { text-shadow: none; }
+
+.nx-layanan-hero .hero-subtitle {
+  max-width: 72ch;
+  margin: 0 auto;
+  font-family: var(--nx-font-body);
+  color: var(--nx-ink-soft);
+  line-height: var(--nx-lh-body);
+  text-wrap: pretty;
+}
+
+.nx-layanan-hero .reveal-hidden {
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: auto;
+}
+
+.nx-layanan-hero .reveal-visible { opacity: 1; transform: none; }
+
+@media (max-width: 600px) {
+  .nx-layanan-hero .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.04em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-layanan-hero .reveal-hidden,
+  .nx-layanan-hero .reveal-visible { opacity: 1; transform: none; transition: none; }
+}
+

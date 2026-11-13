@@ -1,15 +1,23 @@
-import Button from "../components/Button";
-import PageHero from "../components/PageHero";
-import { PILOT_LINK } from "../site";
+import LayananHero from "../components/LayananHero";
+import LayananManagement from "../components/LayananManagement";
+import LayananImplementation from "../components/LayananImplementation";
+import LayananPilot from "../components/LayananPilot";
+import LayananSupport from "../components/LayananSupport";
+import LayananClosing from "../components/LayananClosing";
+import "./Layanan.css";
 
 export default function Layanan() {
   return (
-    <PageHero
-      eyebrow="Layanan"
-      title={<>Pendampingan sampai lembaga <span class="nx-accent">siap berjalan</span></>}
-      lead="Program pilot, migrasi data, pelatihan, dan pendampingan manajemen berjalan bersama platform."
-    >
-      <Button href={PILOT_LINK}>Mulai Program Pilot</Button>
-    </PageHero>
+    <div class="nx-layanan">
+      <LayananHero />
+      <LayananManagement />
+      <LayananImplementation />
+      <LayananPilot />
+      <LayananSupport />
+      <LayananClosing />
+    </div>
   );
 }
+
+
+

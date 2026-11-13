@@ -1,0 +1,31 @@
+.nx-layanan-closing { background: var(--nx-tint); }
+.nx-layanan-closing h2 { margin-bottom: 0; }
+
+.nx-layanan-closing .nx-home-closing__action {
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.nx-layanan-closing .nx-layanan-closing__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: var(--nx-fs-small);
+  line-height: var(--nx-lh-body);
+}
+
+.nx-layanan-closing__note svg { flex-shrink: 0; margin-top: 2px; }
+
+.nx-layanan-closing .reveal-hidden {
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: auto;
+}
+
+.nx-layanan-closing .reveal-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-layanan-closing .reveal-hidden,
+  .nx-layanan-closing .reveal-visible { opacity: 1; transform: none; transition: none; }
+}
